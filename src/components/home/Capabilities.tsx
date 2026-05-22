@@ -2,7 +2,17 @@ import { Link } from "@tanstack/react-router";
 import { GlowCard } from "@/components/primitives/GlowCard";
 import { Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 
-const CAPS = [
+type Cap = {
+  to: string;
+  icon: typeof Boxes;
+  title: string;
+  desc: string;
+  bullets: string[];
+  span: string;
+  big?: boolean;
+};
+
+const CAPS: Cap[] = [
   {
     to: "/capabilities/product-engineering",
     icon: Boxes,
