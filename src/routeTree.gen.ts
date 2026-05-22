@@ -9,38 +9,225 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkRouteImport } from './routes/work'
+import { Route as StudioRouteImport } from './routes/studio'
+import { Route as StackRouteImport } from './routes/stack'
+import { Route as MethodologyRouteImport } from './routes/methodology'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CapabilitiesIndexRouteImport } from './routes/capabilities.index'
+import { Route as CapabilitiesUxEngineeringRouteImport } from './routes/capabilities.ux-engineering'
+import { Route as CapabilitiesSaasPlatformsRouteImport } from './routes/capabilities.saas-platforms'
+import { Route as CapabilitiesProductEngineeringRouteImport } from './routes/capabilities.product-engineering'
+import { Route as CapabilitiesAutomationIntegrationsRouteImport } from './routes/capabilities.automation-integrations'
+import { Route as CapabilitiesArchitectureConsultingRouteImport } from './routes/capabilities.architecture-consulting'
 
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StackRoute = StackRouteImport.update({
+  id: '/stack',
+  path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologyRoute = MethodologyRouteImport.update({
+  id: '/methodology',
+  path: '/methodology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CapabilitiesIndexRoute = CapabilitiesIndexRouteImport.update({
+  id: '/capabilities/',
+  path: '/capabilities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesUxEngineeringRoute =
+  CapabilitiesUxEngineeringRouteImport.update({
+    id: '/capabilities/ux-engineering',
+    path: '/capabilities/ux-engineering',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CapabilitiesSaasPlatformsRoute =
+  CapabilitiesSaasPlatformsRouteImport.update({
+    id: '/capabilities/saas-platforms',
+    path: '/capabilities/saas-platforms',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CapabilitiesProductEngineeringRoute =
+  CapabilitiesProductEngineeringRouteImport.update({
+    id: '/capabilities/product-engineering',
+    path: '/capabilities/product-engineering',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CapabilitiesAutomationIntegrationsRoute =
+  CapabilitiesAutomationIntegrationsRouteImport.update({
+    id: '/capabilities/automation-integrations',
+    path: '/capabilities/automation-integrations',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CapabilitiesArchitectureConsultingRoute =
+  CapabilitiesArchitectureConsultingRouteImport.update({
+    id: '/capabilities/architecture-consulting',
+    path: '/capabilities/architecture-consulting',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
+  '/methodology': typeof MethodologyRoute
+  '/stack': typeof StackRoute
+  '/studio': typeof StudioRoute
+  '/work': typeof WorkRoute
+  '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
+  '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
+  '/capabilities/product-engineering': typeof CapabilitiesProductEngineeringRoute
+  '/capabilities/saas-platforms': typeof CapabilitiesSaasPlatformsRoute
+  '/capabilities/ux-engineering': typeof CapabilitiesUxEngineeringRoute
+  '/capabilities/': typeof CapabilitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
+  '/methodology': typeof MethodologyRoute
+  '/stack': typeof StackRoute
+  '/studio': typeof StudioRoute
+  '/work': typeof WorkRoute
+  '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
+  '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
+  '/capabilities/product-engineering': typeof CapabilitiesProductEngineeringRoute
+  '/capabilities/saas-platforms': typeof CapabilitiesSaasPlatformsRoute
+  '/capabilities/ux-engineering': typeof CapabilitiesUxEngineeringRoute
+  '/capabilities': typeof CapabilitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
+  '/methodology': typeof MethodologyRoute
+  '/stack': typeof StackRoute
+  '/studio': typeof StudioRoute
+  '/work': typeof WorkRoute
+  '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
+  '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
+  '/capabilities/product-engineering': typeof CapabilitiesProductEngineeringRoute
+  '/capabilities/saas-platforms': typeof CapabilitiesSaasPlatformsRoute
+  '/capabilities/ux-engineering': typeof CapabilitiesUxEngineeringRoute
+  '/capabilities/': typeof CapabilitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/careers'
+    | '/methodology'
+    | '/stack'
+    | '/studio'
+    | '/work'
+    | '/capabilities/architecture-consulting'
+    | '/capabilities/automation-integrations'
+    | '/capabilities/product-engineering'
+    | '/capabilities/saas-platforms'
+    | '/capabilities/ux-engineering'
+    | '/capabilities/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/careers'
+    | '/methodology'
+    | '/stack'
+    | '/studio'
+    | '/work'
+    | '/capabilities/architecture-consulting'
+    | '/capabilities/automation-integrations'
+    | '/capabilities/product-engineering'
+    | '/capabilities/saas-platforms'
+    | '/capabilities/ux-engineering'
+    | '/capabilities'
+  id:
+    | '__root__'
+    | '/'
+    | '/careers'
+    | '/methodology'
+    | '/stack'
+    | '/studio'
+    | '/work'
+    | '/capabilities/architecture-consulting'
+    | '/capabilities/automation-integrations'
+    | '/capabilities/product-engineering'
+    | '/capabilities/saas-platforms'
+    | '/capabilities/ux-engineering'
+    | '/capabilities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CareersRoute: typeof CareersRoute
+  MethodologyRoute: typeof MethodologyRoute
+  StackRoute: typeof StackRoute
+  StudioRoute: typeof StudioRoute
+  WorkRoute: typeof WorkRoute
+  CapabilitiesArchitectureConsultingRoute: typeof CapabilitiesArchitectureConsultingRoute
+  CapabilitiesAutomationIntegrationsRoute: typeof CapabilitiesAutomationIntegrationsRoute
+  CapabilitiesProductEngineeringRoute: typeof CapabilitiesProductEngineeringRoute
+  CapabilitiesSaasPlatformsRoute: typeof CapabilitiesSaasPlatformsRoute
+  CapabilitiesUxEngineeringRoute: typeof CapabilitiesUxEngineeringRoute
+  CapabilitiesIndexRoute: typeof CapabilitiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stack': {
+      id: '/stack'
+      path: '/stack'
+      fullPath: '/stack'
+      preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodology': {
+      id: '/methodology'
+      path: '/methodology'
+      fullPath: '/methodology'
+      preLoaderRoute: typeof MethodologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +235,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/capabilities/': {
+      id: '/capabilities/'
+      path: '/capabilities'
+      fullPath: '/capabilities/'
+      preLoaderRoute: typeof CapabilitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/ux-engineering': {
+      id: '/capabilities/ux-engineering'
+      path: '/capabilities/ux-engineering'
+      fullPath: '/capabilities/ux-engineering'
+      preLoaderRoute: typeof CapabilitiesUxEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/saas-platforms': {
+      id: '/capabilities/saas-platforms'
+      path: '/capabilities/saas-platforms'
+      fullPath: '/capabilities/saas-platforms'
+      preLoaderRoute: typeof CapabilitiesSaasPlatformsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/product-engineering': {
+      id: '/capabilities/product-engineering'
+      path: '/capabilities/product-engineering'
+      fullPath: '/capabilities/product-engineering'
+      preLoaderRoute: typeof CapabilitiesProductEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/automation-integrations': {
+      id: '/capabilities/automation-integrations'
+      path: '/capabilities/automation-integrations'
+      fullPath: '/capabilities/automation-integrations'
+      preLoaderRoute: typeof CapabilitiesAutomationIntegrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities/architecture-consulting': {
+      id: '/capabilities/architecture-consulting'
+      path: '/capabilities/architecture-consulting'
+      fullPath: '/capabilities/architecture-consulting'
+      preLoaderRoute: typeof CapabilitiesArchitectureConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CareersRoute: CareersRoute,
+  MethodologyRoute: MethodologyRoute,
+  StackRoute: StackRoute,
+  StudioRoute: StudioRoute,
+  WorkRoute: WorkRoute,
+  CapabilitiesArchitectureConsultingRoute:
+    CapabilitiesArchitectureConsultingRoute,
+  CapabilitiesAutomationIntegrationsRoute:
+    CapabilitiesAutomationIntegrationsRoute,
+  CapabilitiesProductEngineeringRoute: CapabilitiesProductEngineeringRoute,
+  CapabilitiesSaasPlatformsRoute: CapabilitiesSaasPlatformsRoute,
+  CapabilitiesUxEngineeringRoute: CapabilitiesUxEngineeringRoute,
+  CapabilitiesIndexRoute: CapabilitiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
