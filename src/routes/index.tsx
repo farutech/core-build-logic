@@ -1,26 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/home/Hero";
+import { ProofBar } from "@/components/home/ProofBar";
+import { Capabilities } from "@/components/home/Capabilities";
+import { Methodology } from "@/components/home/Methodology";
+import { Architecture } from "@/components/home/Architecture";
+import { Work } from "@/components/home/Work";
+import { FinalCTA } from "@/components/home/FinalCTA";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "FaruTech — Engineering the digital frontier" },
+      {
+        name: "description",
+        content:
+          "We build scalable platforms, multi-tenant SaaS and critical systems for teams that can't afford to rewrite. No shortcuts. No tech debt.",
+      },
+      { property: "og:title", content: "FaruTech — Engineering the digital frontier" },
+      {
+        property: "og:description",
+        content:
+          "Engineering studio for scalable platforms and multi-tenant SaaS. Architecture, product engineering, automation.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <ProofBar />
+      <Capabilities />
+      <Methodology />
+      <Architecture />
+      <Work />
+      <FinalCTA />
+    </>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
