@@ -1,24 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/primitives/Logo";
+import { LanguageSwitcher } from "@/components/primitives/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { useContactDrawer } from "@/stores/useContactDrawer";
+import { useLocale } from "@/i18n";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { to: "/capabilities", label: "Capabilities" },
-  { to: "/methodology", label: "Methodology" },
-  { to: "/stack", label: "Stack" },
-  { to: "/work", label: "Work" },
-  { to: "/studio", label: "Studio" },
-  { to: "/careers", label: "Careers" },
-] as const;
-
 export function Header() {
   const openDrawer = useContactDrawer((s) => s.openDrawer);
+  const { t } = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const NAV = [
+    { to: "/capabilities", label: t.nav.capabilities },
+    { to: "/methodology", label: t.nav.methodology },
+    { to: "/stack", label: t.nav.stack },
+    { to: "/work", label: t.nav.work },
+    { to: "/studio", label: t.nav.studio },
+    { to: "/careers", label: t.nav.careers },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -54,12 +57,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher className="hidden sm:flex" />
           <Button
             onClick={() => openDrawer("header")}
             size="sm"
             className="hidden md:inline-flex bg-foreground text-background hover:bg-foreground/90"
           >
-            Start a project
+            {t.nav.startProject}
           </Button>
           <button
             className="md:hidden rounded-md p-2 text-foreground"
@@ -84,14 +88,18 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="flex items-center justify-between pt-2 border-t border-border mt-2">
+              <span className="text-sm text-muted-foreground">Language</span>
+              <LanguageSwitcher variant="full" />
+            </div>
             <Button
               onClick={() => {
                 openDrawer("mobile-nav");
                 setOpen(false);
               }}
-              className="mt-2 bg-foreground text-background hover:bg-foreground/90"
+              className="mt-4 bg-foreground text-background hover:bg-foreground/90"
             >
-              Start a project
+              {t.nav.startProject}
             </Button>
           </nav>
         </div>

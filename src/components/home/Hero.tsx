@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useContactDrawer } from "@/stores/useContactDrawer";
+import { useLocale } from "@/i18n";
 import { ArrowRight } from "lucide-react";
 import { Logo } from "@/components/primitives/Logo";
 
 export function Hero() {
   const openDrawer = useContactDrawer((s) => s.openDrawer);
+  const { t } = useLocale();
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32 noise">
@@ -21,7 +23,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-3 py-1 text-xs text-muted-foreground backdrop-blur-sm"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-          Now building: a multi-tenant analytics platform for a Series B fintech.
+          {t.hero.badge}
         </motion.div>
 
         <div className="mt-8 grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
@@ -32,9 +34,9 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
               className="font-display text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl lg:text-[5.5rem]"
             >
-              Engineering<br />
-              <span className="text-gradient">the digital</span><br />
-              <span className="text-gradient">frontier.</span>
+              {t.hero.title1}<br />
+              <span className="text-gradient">{t.hero.title2}</span><br />
+              <span className="text-gradient">{t.hero.title3}</span>
             </motion.h1>
 
             <motion.p
@@ -43,9 +45,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
             >
-              We build scalable platforms, multi-tenant SaaS, and critical
-              systems for teams that can't afford to rewrite. No shortcuts.
-              No tech debt. Just engineering.
+              {t.hero.description}
             </motion.p>
 
             <motion.div
@@ -59,7 +59,7 @@ export function Hero() {
                 onClick={() => openDrawer("hero")}
                 className="bg-foreground text-background hover:bg-foreground/90 h-12 px-6 rounded-full"
               >
-                Start a project
+                {t.hero.cta}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
@@ -68,7 +68,7 @@ export function Hero() {
                 asChild
                 className="h-12 px-6 rounded-full hover:bg-surface"
               >
-                <a href="#methodology">See how we build</a>
+                <a href="#methodology">{t.hero.ctaSecondary}</a>
               </Button>
             </motion.div>
           </div>

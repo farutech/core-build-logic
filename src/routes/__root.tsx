@@ -13,22 +13,25 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactDrawer } from "@/components/contact/ContactDrawer";
 import { Toaster } from "@/components/ui/sonner";
+import { useLocale } from "@/i18n";
 
 function NotFoundComponent() {
+  const { t } = useLocale();
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-7xl font-semibold text-gradient">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h1 className="font-display text-7xl font-semibold text-gradient">{t.notFound.title}</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">{t.notFound.subtitle}</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          This route doesn't exist. Yet.
+          {t.notFound.description}
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/90"
           >
-            Back home
+            {t.notFound.backHome}
           </Link>
         </div>
       </div>
@@ -39,15 +42,16 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const { t } = useLocale();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-2xl font-semibold tracking-tight">
-          Something broke on our end.
+          {t.error.title}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          We logged it. Try again or head home.
+          {t.error.description}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -57,13 +61,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-foreground/90"
           >
-            Try again
+            {t.error.tryAgain}
           </button>
           <a
             href="/"
             className="rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:bg-surface"
           >
-            Go home
+            {t.error.goHome}
           </a>
         </div>
       </div>
@@ -102,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background">
       <head>
         <HeadContent />
       </head>

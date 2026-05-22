@@ -1,78 +1,70 @@
 import { Link } from "@tanstack/react-router";
 import { GlowCard } from "@/components/primitives/GlowCard";
+import { useLocale } from "@/i18n";
 import { Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 
-type Cap = {
-  to: string;
-  icon: typeof Boxes;
-  title: string;
-  desc: string;
-  bullets: string[];
-  span: string;
-  big?: boolean;
-};
-
-const CAPS: Cap[] = [
-  {
-    to: "/capabilities/product-engineering",
-    icon: Boxes,
-    title: "Product Engineering",
-    desc: "Idea to platform in production. No shortcuts, no tech debt.",
-    bullets: ["Web & mobile platforms", "Internal tools", "Real-time systems", "Critical operations"],
-    span: "lg:col-span-2 lg:row-span-2",
-    big: true,
-  },
-  {
-    to: "/capabilities/saas-platforms",
-    icon: Layers,
-    title: "SaaS Platforms",
-    desc: "Multi-tenant, billing-ready, observable from day one.",
-    bullets: ["Multi-tenant arch", "Billing & subscriptions", "Analytics & roles"],
-    span: "lg:col-span-2",
-  },
-  {
-    to: "/capabilities/architecture-consulting",
-    icon: Cpu,
-    title: "Architecture & Consulting",
-    desc: "Honest technical diagnostics. Actionable roadmaps.",
-    bullets: ["Cloud modernization", "Performance audits", "Cost optimization"],
-    span: "",
-  },
-  {
-    to: "/capabilities/ux-engineering",
-    icon: Sparkles,
-    title: "UX Engineering",
-    desc: "Interfaces that scale with your product, not against it.",
-    bullets: ["Design systems", "Complex UI", "Motion & a11y"],
-    span: "",
-  },
-  {
-    to: "/capabilities/automation-integrations",
-    icon: Workflow,
-    title: "Automation & Integrations",
-    desc: "Connect what you have with what you need.",
-    bullets: ["APIs & webhooks", "Workflow engines", "Data sync"],
-    span: "lg:col-span-2",
-  },
-];
-
 export function Capabilities() {
+  const { t } = useLocale();
+
+  const CAPS = [
+    {
+      to: "/capabilities/product-engineering",
+      icon: Boxes,
+      title: t.capabilities.items.productEngineering.title,
+      desc: t.capabilities.items.productEngineering.desc,
+      bullets: t.capabilities.items.productEngineering.bullets,
+      span: "lg:col-span-2 lg:row-span-2",
+      big: true,
+    },
+    {
+      to: "/capabilities/saas-platforms",
+      icon: Layers,
+      title: t.capabilities.items.saasPlatforms.title,
+      desc: t.capabilities.items.saasPlatforms.desc,
+      bullets: t.capabilities.items.saasPlatforms.bullets,
+      span: "lg:col-span-2",
+    },
+    {
+      to: "/capabilities/architecture-consulting",
+      icon: Cpu,
+      title: t.capabilities.items.architectureConsulting.title,
+      desc: t.capabilities.items.architectureConsulting.desc,
+      bullets: t.capabilities.items.architectureConsulting.bullets,
+      span: "",
+    },
+    {
+      to: "/capabilities/ux-engineering",
+      icon: Sparkles,
+      title: t.capabilities.items.uxEngineering.title,
+      desc: t.capabilities.items.uxEngineering.desc,
+      bullets: t.capabilities.items.uxEngineering.bullets,
+      span: "",
+    },
+    {
+      to: "/capabilities/automation-integrations",
+      icon: Workflow,
+      title: t.capabilities.items.automationIntegrations.title,
+      desc: t.capabilities.items.automationIntegrations.desc,
+      bullets: t.capabilities.items.automationIntegrations.bullets,
+      span: "lg:col-span-2",
+    },
+  ];
+
   return (
     <section className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              01 — Capabilities
+              {t.capabilities.eyebrow}
             </div>
             <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight max-w-2xl">
-              Five disciplines.<br />
-              <span className="text-gradient">One engineering org.</span>
+              {t.capabilities.title}<br />
+              <span className="text-gradient">{t.capabilities.titleHighlight}</span>
             </h2>
           </div>
           <p className="max-w-sm text-muted-foreground">
-            Not a menu of services — a coherent system for shipping
-            platforms that survive growth.
+            {t.capabilities.description}
           </p>
         </div>
 
