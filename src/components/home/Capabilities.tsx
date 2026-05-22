@@ -54,7 +54,7 @@ const CAPS: Cap[] = [
     bullets: ["APIs & webhooks", "Workflow engines", "Data sync"],
     span: "lg:col-span-2",
   },
-] as const;
+];
 
 export function Capabilities() {
   return (
