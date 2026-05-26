@@ -396,7 +396,7 @@ export const en = {
       ],
     },
   },
-} as const;
+};
 
 export const es: typeof en = {
   nav: {
