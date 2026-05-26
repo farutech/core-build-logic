@@ -1,23 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useContactDrawer } from "@/stores/useContactDrawer";
+import { useT } from "@/i18n/useT";
 import { ArrowRight, Check } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+type Slug =
+  | "product-engineering"
+  | "saas-platforms"
+  | "architecture-consulting"
+  | "ux-engineering"
+  | "automation-integrations";
+
 export interface CapabilityPageProps {
-  eyebrow: string;
-  title: string;
-  highlight: string;
-  intro: string;
-  problems: { title: string; desc: string }[];
-  solutions: { title: string; desc: string }[];
-  stack: string[];
-  useCases: { title: string; desc: string }[];
-  cta: string;
+  slug: Slug;
   Icon: LucideIcon;
+  stack: string[];
 }
 
-export function CapabilityPage(p: CapabilityPageProps) {
+export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
+  const t = useT();
+  const p = t.capabilityPages[slug];
+  const chrome = t.capabilityPage;
   const openDrawer = useContactDrawer((s) => s.openDrawer);
 
   return (
@@ -27,7 +31,7 @@ export function CapabilityPage(p: CapabilityPageProps) {
         <div className="absolute inset-0 bg-mesh opacity-60 pointer-events-none" />
         <div className="mx-auto max-w-7xl px-6 relative">
           <Link to="/capabilities" className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground">
-            ← All capabilities
+            {chrome.back}
           </Link>
           <div className="mt-8 grid md:grid-cols-[1.5fr_1fr] gap-12 items-center">
             <div>
@@ -40,7 +44,7 @@ export function CapabilityPage(p: CapabilityPageProps) {
               <div className="mt-10">
                 <Button
                   size="lg"
-                  onClick={() => openDrawer(p.eyebrow)}
+                  onClick={() => openDrawer(slug)}
                   className="bg-foreground text-background hover:bg-foreground/90 h-12 px-6 rounded-full"
                 >
                   {p.cta}
@@ -52,7 +56,7 @@ export function CapabilityPage(p: CapabilityPageProps) {
               <div className="relative h-64 w-64">
                 <div className="absolute inset-0 bg-glow opacity-80" />
                 <div className="relative h-full w-full rounded-3xl border border-border bg-surface/40 backdrop-blur flex items-center justify-center">
-                  <p.Icon className="h-20 w-20 text-primary" strokeWidth={1.2} />
+                  <Icon className="h-20 w-20 text-primary" strokeWidth={1.2} />
                 </div>
               </div>
             </div>
@@ -63,9 +67,9 @@ export function CapabilityPage(p: CapabilityPageProps) {
       {/* Problems */}
       <section className="py-20 border-y border-border bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Why teams call us</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{chrome.problemsEyebrow}</div>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
-            The problems behind the request.
+            {chrome.problemsTitle}
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {p.problems.map((x) => (
@@ -81,9 +85,9 @@ export function CapabilityPage(p: CapabilityPageProps) {
       {/* Solutions */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">What we deliver</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{chrome.solutionsEyebrow}</div>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
-            Outcomes, <span className="text-gradient">not features.</span>
+            {chrome.solutionsTitle1} <span className="text-gradient">{chrome.solutionsTitle2}</span>
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {p.solutions.map((x) => (
@@ -104,12 +108,12 @@ export function CapabilityPage(p: CapabilityPageProps) {
       {/* Stack */}
       <section className="py-20 border-y border-border bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Stack of choice</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{chrome.stackEyebrow}</div>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
-            Tools we reach for first.
+            {chrome.stackTitle}
           </h2>
           <div className="mt-10 flex flex-wrap gap-2">
-            {p.stack.map((s) => (
+            {stack.map((s) => (
               <span key={s} className="rounded-full border border-border bg-background/60 px-4 py-2 text-sm font-mono">
                 {s}
               </span>
@@ -121,9 +125,9 @@ export function CapabilityPage(p: CapabilityPageProps) {
       {/* Use cases */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">In production</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{chrome.useCasesEyebrow}</div>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
-            Scenarios we've shipped.
+            {chrome.useCasesTitle}
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {p.useCases.map((x) => (
@@ -144,10 +148,10 @@ export function CapabilityPage(p: CapabilityPageProps) {
           </h2>
           <Button
             size="lg"
-            onClick={() => openDrawer(p.eyebrow)}
+            onClick={() => openDrawer(slug)}
             className="mt-8 bg-foreground text-background hover:bg-foreground/90 h-12 px-6 rounded-full"
           >
-            Start the conversation
+            {chrome.ctaButton}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
