@@ -1,23 +1,22 @@
 import { motion } from "framer-motion";
+import { useT } from "@/i18n/useT";
 
 export function Architecture() {
+  const t = useT();
   return (
     <section className="relative py-28 border-y border-border bg-surface/20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between mb-16 flex-wrap gap-4">
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              03 — Architecture
+              {t.architecture.eyebrow}
             </div>
             <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight max-w-2xl">
-              We don't ship monoliths<br />
-              <span className="text-gradient">by accident.</span>
+              {t.architecture.title1}<br />
+              <span className="text-gradient">{t.architecture.title2}</span>
             </h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">
-            A representative slice of how we build modern, observable, multi-region
-            SaaS platforms.
-          </p>
+          <p className="max-w-sm text-muted-foreground">{t.architecture.sub}</p>
         </div>
 
         <motion.div
@@ -43,7 +42,6 @@ export function Architecture() {
               </filter>
             </defs>
 
-            {/* Connections */}
             <g stroke="url(#g1)" strokeWidth="1.5" fill="none" opacity="0.7">
               <path d="M 130 240 L 280 100" />
               <path d="M 130 240 L 280 240" />
@@ -56,7 +54,6 @@ export function Architecture() {
               <path d="M 640 240 L 790 340" />
             </g>
 
-            {/* Animated pulses */}
             {[0, 1, 2].map((i) => (
               <circle key={i} r="3" fill="oklch(0.88 0.18 195)" filter="url(#glow)">
                 <animateMotion
@@ -67,7 +64,6 @@ export function Architecture() {
               </circle>
             ))}
 
-            {/* Nodes */}
             <Node x={80} y={210} label="Edge" sub="CDN · WAF" />
             <Node x={280} y={70} label="Web App" sub="React · TS" />
             <Node x={280} y={210} label="Mobile" sub="React Native" />
@@ -89,20 +85,9 @@ function Node({ x, y, label, sub, big = false }: { x: number; y: number; label: 
   const h = 56;
   return (
     <g transform={`translate(${x - w / 2} ${y - h / 2})`}>
-      <rect
-        width={w}
-        height={h}
-        rx="10"
-        fill="oklch(0.16 0.018 250)"
-        stroke="oklch(1 0 0 / 0.12)"
-        strokeWidth="1"
-      />
-      <text x={w / 2} y={22} textAnchor="middle" fill="oklch(0.97 0.005 250)" fontSize="11" fontWeight="600" fontFamily="ui-sans-serif">
-        {label}
-      </text>
-      <text x={w / 2} y={40} textAnchor="middle" fill="oklch(0.65 0.015 250)" fontSize="9" fontFamily="ui-monospace">
-        {sub}
-      </text>
+      <rect width={w} height={h} rx="10" fill="oklch(0.16 0.018 250)" stroke="oklch(1 0 0 / 0.12)" strokeWidth="1" />
+      <text x={w / 2} y={22} textAnchor="middle" fill="oklch(0.97 0.005 250)" fontSize="11" fontWeight="600" fontFamily="ui-sans-serif">{label}</text>
+      <text x={w / 2} y={40} textAnchor="middle" fill="oklch(0.65 0.015 250)" fontSize="9" fontFamily="ui-monospace">{sub}</text>
     </g>
   );
 }
