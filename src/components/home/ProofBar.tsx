@@ -1,9 +1,4 @@
-const STATS = [
-  { value: "10x", label: "Faster delivery" },
-  { value: "99.9%", label: "Platform uptime" },
-  { value: "50+", label: "Systems shipped" },
-  { value: "0", label: "Rewrites in 3 years" },
-];
+import { useT } from "@/i18n/useT";
 
 const LOGOS = [
   "AWS", "Vercel", "Supabase", "Stripe", "Kubernetes", "PostgreSQL",
@@ -11,11 +6,12 @@ const LOGOS = [
 ];
 
 export function ProofBar() {
+  const t = useT();
   return (
     <section className="relative border-y border-border bg-surface/30 py-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {STATS.map((s) => (
+          {t.proof.stats.map((s) => (
             <div key={s.label}>
               <div className="font-display text-4xl font-semibold tracking-tight md:text-5xl text-gradient">
                 {s.value}

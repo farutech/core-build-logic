@@ -1,24 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/primitives/Logo";
+import { LanguageSwitcher } from "@/components/primitives/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { useContactDrawer } from "@/stores/useContactDrawer";
+import { useT } from "@/i18n/useT";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { to: "/capabilities", label: "Capabilities" },
-  { to: "/methodology", label: "Methodology" },
-  { to: "/stack", label: "Stack" },
-  { to: "/work", label: "Work" },
-  { to: "/studio", label: "Studio" },
-  { to: "/careers", label: "Careers" },
-] as const;
-
 export function Header() {
   const openDrawer = useContactDrawer((s) => s.openDrawer);
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const NAV = [
+    { to: "/capabilities", label: t.nav.capabilities },
+    { to: "/methodology", label: t.nav.methodology },
+    { to: "/stack", label: t.nav.stack },
+    { to: "/work", label: t.nav.work },
+    { to: "/studio", label: t.nav.studio },
+    { to: "/careers", label: t.nav.careers },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -40,7 +43,7 @@ export function Header() {
           <span className="text-base font-semibold tracking-tight">FaruTech</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
@@ -54,17 +57,18 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher className="hidden sm:inline-flex" />
           <Button
             onClick={() => openDrawer("header")}
             size="sm"
-            className="hidden md:inline-flex bg-foreground text-background hover:bg-foreground/90"
+            className="hidden lg:inline-flex bg-foreground text-background hover:bg-foreground/90"
           >
-            Start a project
+            {t.nav.cta}
           </Button>
           <button
-            className="md:hidden rounded-md p-2 text-foreground"
+            className="lg:hidden rounded-md p-2 text-foreground"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
+            aria-label={t.nav.toggleMenu}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -72,7 +76,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="flex flex-col px-6 py-4">
             {NAV.map((item) => (
               <Link
@@ -84,15 +88,18 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                openDrawer("mobile-nav");
-                setOpen(false);
-              }}
-              className="mt-2 bg-foreground text-background hover:bg-foreground/90"
-            >
-              Start a project
-            </Button>
+            <div className="mt-3 flex items-center justify-between gap-3">
+              <LanguageSwitcher />
+              <Button
+                onClick={() => {
+                  openDrawer("mobile-nav");
+                  setOpen(false);
+                }}
+                className="bg-foreground text-background hover:bg-foreground/90"
+              >
+                {t.nav.cta}
+              </Button>
+            </div>
           </nav>
         </div>
       )}

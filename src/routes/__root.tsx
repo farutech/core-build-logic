@@ -13,22 +13,23 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactDrawer } from "@/components/contact/ContactDrawer";
 import { Toaster } from "@/components/ui/sonner";
+import { I18nBoot } from "@/i18n/I18nBoot";
+import { useT } from "@/i18n/useT";
 
 function NotFoundComponent() {
+  const t = useT();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-7xl font-semibold text-gradient">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          This route doesn't exist. Yet.
-        </p>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">{t.notFound.title}</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{t.notFound.desc}</p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/90"
           >
-            Back home
+            {t.notFound.home}
           </Link>
         </div>
       </div>
@@ -39,16 +40,13 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const t = useT();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-2xl font-semibold tracking-tight">
-          Something broke on our end.
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          We logged it. Try again or head home.
-        </p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">{t.error.title}</h1>
+        <p className="mt-2 text-sm text-muted-foreground">{t.error.desc}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -57,13 +55,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:bg-foreground/90"
           >
-            Try again
+            {t.error.retry}
           </button>
-          <a
-            href="/"
-            className="rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:bg-surface"
-          >
-            Go home
+          <a href="/" className="rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:bg-surface">
+            {t.error.home}
           </a>
         </div>
       </div>
@@ -119,6 +114,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <I18nBoot />
       <div className="relative min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">

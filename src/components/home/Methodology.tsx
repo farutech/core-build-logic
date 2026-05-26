@@ -1,40 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const STEPS = [
-  {
-    n: "01",
-    title: "Discovery",
-    desc: "We map your real constraints — technical, organizational, financial. Output: a buildable scope, not a slide deck.",
-    out: "Scope doc · Risk map · Tech proposal",
-  },
-  {
-    n: "02",
-    title: "Architecture",
-    desc: "Data model, infra topology, integration surface. Decided before code, documented as ADRs.",
-    out: "System diagram · ADRs · Stack rationale",
-  },
-  {
-    n: "03",
-    title: "Design",
-    desc: "Component system, interaction patterns, motion language. Designed in code, not in Figma alone.",
-    out: "Design system · Prototypes · UI kit",
-  },
-  {
-    n: "04",
-    title: "Build",
-    desc: "2-week sprints. Trunk-based. Continuous deploy to staging from day one. You see it growing.",
-    out: "Production releases · Test coverage · Observability",
-  },
-  {
-    n: "05",
-    title: "Scale",
-    desc: "Performance budgets, load tests, cost reviews. Handover with runbooks or stay as your platform team.",
-    out: "SLOs · Runbooks · Cost optimization",
-  },
-];
+import { useT } from "@/i18n/useT";
 
 export function Methodology() {
+  const t = useT();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -48,20 +17,16 @@ export function Methodology() {
         <div className="flex items-end justify-between mb-16 flex-wrap gap-4">
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              02 — Methodology
+              {t.methodology.eyebrow}
             </div>
             <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight max-w-2xl">
-              How we go from blank<br />repo to <span className="text-gradient">production</span>.
+              {t.methodology.title1}<br />{t.methodology.title2} <span className="text-gradient">{t.methodology.titleAccent}</span>
             </h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">
-            A process built for systems that have to survive their first 10x —
-            not for slide decks that have to survive procurement.
-          </p>
+          <p className="max-w-sm text-muted-foreground">{t.methodology.sub}</p>
         </div>
 
         <div ref={ref} className="relative">
-          {/* Vertical line */}
           <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
           <motion.div
             style={{ height: lineHeight }}
@@ -69,7 +34,7 @@ export function Methodology() {
           />
 
           <div className="space-y-16">
-            {STEPS.map((s, i) => (
+            {t.methodology.steps.map((s, i) => (
               <motion.div
                 key={s.n}
                 initial={{ opacity: 0, y: 30 }}
@@ -78,7 +43,6 @@ export function Methodology() {
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative grid md:grid-cols-2 gap-8 ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
               >
-                {/* Node */}
                 <div className="absolute left-[28px] md:left-1/2 top-2 -translate-x-1/2 z-10">
                   <div className="h-4 w-4 rounded-full bg-background border-2 border-primary glow-cyan" />
                 </div>
