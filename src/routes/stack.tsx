@@ -1,13 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-const LAYERS = [
-  { title: "Frontend", items: ["React", "TypeScript", "TanStack Start", "Next.js", "Tailwind", "Framer Motion", "Radix", "shadcn/ui"] },
-  { title: "Backend", items: ["Node.js", "tRPC", "Hono", "Fastify", "Go", "Python", "Zod", "Prisma"] },
-  { title: "Data", items: ["Postgres", "Redis", "ClickHouse", "Kafka", "DuckDB", "Pinecone", "S3"] },
-  { title: "Infra", items: ["AWS", "GCP", "Cloudflare", "Vercel", "Kubernetes", "Terraform", "Pulumi", "Docker"] },
-  { title: "Observability", items: ["OpenTelemetry", "Datadog", "Grafana", "Sentry", "Posthog"] },
-  { title: "AI & ML", items: ["OpenAI", "Anthropic", "LangGraph", "Inngest", "Replicate"] },
-];
+import { useT } from "@/i18n/useT";
 
 export const Route = createFileRoute("/stack")({
   head: () => ({
@@ -18,24 +10,27 @@ export const Route = createFileRoute("/stack")({
       { property: "og:description", content: "Opinionated, justified, replaceable." },
     ],
   }),
-  component: () => (
+  component: StackPage,
+});
+
+function StackPage() {
+  const t = useT();
+  return (
     <div>
       <section className="pt-32 md:pt-44 pb-16">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Stack</div>
+          <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{t.stack.eyebrow}</div>
           <h1 className="mt-4 font-display text-5xl md:text-7xl font-semibold tracking-tight leading-[0.95]">
-            Opinionated.<br />
-            <span className="text-gradient">Justified. Replaceable.</span>
+            {t.stack.title1}<br />
+            <span className="text-gradient">{t.stack.title2}</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            We default to a focused stack so we can move fast. We deviate when the problem calls for it — and we document why. Nothing here is sacred.
-          </p>
+          <p className="mt-8 max-w-2xl text-lg text-muted-foreground">{t.stack.intro}</p>
         </div>
       </section>
 
       <section className="pb-28">
         <div className="mx-auto max-w-7xl px-6 grid gap-4 md:grid-cols-2">
-          {LAYERS.map((l) => (
+          {t.stack.layers.map((l) => (
             <div key={l.title} className="rounded-2xl border border-border bg-surface/40 p-8">
               <div className="text-xs font-mono uppercase tracking-widest text-primary">{l.title}</div>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -50,5 +45,5 @@ export const Route = createFileRoute("/stack")({
         </div>
       </section>
     </div>
-  ),
-});
+  );
+}

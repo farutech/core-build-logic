@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StudioRouteImport } from './routes/studio'
 import { Route as StackRouteImport } from './routes/stack'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,6 +30,11 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudioRoute = StudioRouteImport.update({
   id: '/studio',
   path: '/studio',
@@ -35,6 +43,16 @@ const StudioRoute = StudioRouteImport.update({
 const StackRoute = StackRouteImport.update({
   id: '/stack',
   path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodologyRoute = MethodologyRouteImport.update({
@@ -92,8 +110,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/careers': typeof CareersRoute
   '/methodology': typeof MethodologyRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
   '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
@@ -106,8 +127,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/careers': typeof CareersRoute
   '/methodology': typeof MethodologyRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
   '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
@@ -121,8 +145,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/careers': typeof CareersRoute
   '/methodology': typeof MethodologyRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/capabilities/architecture-consulting': typeof CapabilitiesArchitectureConsultingRoute
   '/capabilities/automation-integrations': typeof CapabilitiesAutomationIntegrationsRoute
@@ -137,8 +164,11 @@ export interface FileRouteTypes {
     | '/'
     | '/careers'
     | '/methodology'
+    | '/privacy'
+    | '/security'
     | '/stack'
     | '/studio'
+    | '/terms'
     | '/work'
     | '/capabilities/architecture-consulting'
     | '/capabilities/automation-integrations'
@@ -151,8 +181,11 @@ export interface FileRouteTypes {
     | '/'
     | '/careers'
     | '/methodology'
+    | '/privacy'
+    | '/security'
     | '/stack'
     | '/studio'
+    | '/terms'
     | '/work'
     | '/capabilities/architecture-consulting'
     | '/capabilities/automation-integrations'
@@ -165,8 +198,11 @@ export interface FileRouteTypes {
     | '/'
     | '/careers'
     | '/methodology'
+    | '/privacy'
+    | '/security'
     | '/stack'
     | '/studio'
+    | '/terms'
     | '/work'
     | '/capabilities/architecture-consulting'
     | '/capabilities/automation-integrations'
@@ -180,8 +216,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CareersRoute: typeof CareersRoute
   MethodologyRoute: typeof MethodologyRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SecurityRoute: typeof SecurityRoute
   StackRoute: typeof StackRoute
   StudioRoute: typeof StudioRoute
+  TermsRoute: typeof TermsRoute
   WorkRoute: typeof WorkRoute
   CapabilitiesArchitectureConsultingRoute: typeof CapabilitiesArchitectureConsultingRoute
   CapabilitiesAutomationIntegrationsRoute: typeof CapabilitiesAutomationIntegrationsRoute
@@ -200,6 +239,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/studio': {
       id: '/studio'
       path: '/studio'
@@ -212,6 +258,20 @@ declare module '@tanstack/react-router' {
       path: '/stack'
       fullPath: '/stack'
       preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/methodology': {
@@ -284,8 +344,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CareersRoute: CareersRoute,
   MethodologyRoute: MethodologyRoute,
+  PrivacyRoute: PrivacyRoute,
+  SecurityRoute: SecurityRoute,
   StackRoute: StackRoute,
   StudioRoute: StudioRoute,
+  TermsRoute: TermsRoute,
   WorkRoute: WorkRoute,
   CapabilitiesArchitectureConsultingRoute:
     CapabilitiesArchitectureConsultingRoute,
