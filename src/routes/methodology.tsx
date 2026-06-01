@@ -30,7 +30,7 @@ function MethodologyPage() {
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">{t.methodology.pageIntro}</p>
         </div>
       </section>
-      <MethodologySection />
+      <MethodologySection showHeader={false} />
     </div>
   );
 }

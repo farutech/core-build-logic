@@ -4,6 +4,10 @@
 export const en = {
   nav: {
     capabilities: "Capabilities",
+    solutions: "Solutions",
+    solutionsAll: "Explore all capabilities",
+    solutionsTag: "What we build",
+    company: "Company",
     methodology: "Methodology",
     stack: "Stack",
     work: "Work",
@@ -401,6 +405,10 @@ export const en = {
 export const es: typeof en = {
   nav: {
     capabilities: "Capacidades",
+    solutions: "Soluciones",
+    solutionsAll: "Ver todas las capacidades",
+    solutionsTag: "Lo que construimos",
+    company: "Empresa",
     methodology: "Metodología",
     stack: "Stack",
     work: "Proyectos",

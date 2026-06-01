@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useContactDrawer } from "@/stores/useContactDrawer";
 import { useT } from "@/i18n/useT";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Slug =
@@ -71,11 +71,12 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
             {chrome.problemsTitle}
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {p.problems.map((x) => (
-              <div key={x.title} className="rounded-2xl border border-border bg-background/60 p-6">
-                <h3 className="font-display font-semibold">{x.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{x.desc}</p>
+          <div className="mt-12 divide-y divide-border rounded-2xl border border-border bg-background/40 overflow-hidden">
+            {p.problems.map((x, i) => (
+              <div key={x.title} className="group flex flex-col gap-2 px-6 py-6 transition-colors hover:bg-surface/40 md:flex-row md:items-center md:gap-8">
+                <span className="font-mono text-sm text-muted-foreground/60 md:w-10">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-display text-lg font-semibold md:w-64 md:shrink-0">{x.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed md:flex-1">{x.desc}</p>
               </div>
             ))}
           </div>
@@ -89,21 +90,18 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
             {chrome.solutionsTitle1} <span className="text-gradient">{chrome.solutionsTitle2}</span>
           </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
             {p.solutions.map((x) => (
-              <div key={x.title} className="flex gap-4 rounded-2xl border border-border bg-surface/30 p-6">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-accent/10 border border-border">
-                  <Check className="h-4 w-4 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold">{x.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{x.desc}</p>
-                </div>
+              <div key={x.title} className="relative bg-surface/30 p-8 transition-colors hover:bg-surface/60">
+                <div className="absolute right-6 top-6 h-1.5 w-1.5 rounded-full bg-accent" />
+                <h3 className="font-display text-lg font-semibold pr-6">{x.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{x.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Stack */}
       <section className="py-20 border-y border-border bg-surface/20">

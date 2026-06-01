@@ -29,7 +29,7 @@ function WorkPage() {
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">{t.work.pageIntro}</p>
         </div>
       </section>
-      <WorkSection />
+      <WorkSection showHeader={false} />
     </div>
   );
 }
