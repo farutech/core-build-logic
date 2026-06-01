@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useT } from "@/i18n/useT";
 
-export function Methodology() {
+export function Methodology({ showHeader = true }: { showHeader?: boolean }) {
   const t = useT();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -14,17 +14,20 @@ export function Methodology() {
   return (
     <section id="methodology" className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-4">
-          <div>
-            <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              {t.methodology.eyebrow}
+        {showHeader && (
+          <div className="flex items-end justify-between mb-16 flex-wrap gap-4">
+            <div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                {t.methodology.eyebrow}
+              </div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight max-w-2xl">
+                {t.methodology.title1}<br />{t.methodology.title2} <span className="text-gradient">{t.methodology.titleAccent}</span>
+              </h2>
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight max-w-2xl">
-              {t.methodology.title1}<br />{t.methodology.title2} <span className="text-gradient">{t.methodology.titleAccent}</span>
-            </h2>
+            <p className="max-w-sm text-muted-foreground">{t.methodology.sub}</p>
           </div>
-          <p className="max-w-sm text-muted-foreground">{t.methodology.sub}</p>
-        </div>
+        )}
+
 
         <div ref={ref} className="relative">
           <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
