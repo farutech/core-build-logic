@@ -8,6 +8,7 @@ import { useT } from "@/i18n/useT";
 import { Menu, X, ChevronDown, Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { capabilityVisuals } from "@/lib/capabilityConfig";
 
 type Slug =
   | "product-engineering"
