@@ -3,8 +3,10 @@ import { useMemo } from "react";
 import { GlowCard } from "@/components/primitives/GlowCard";
 import { useT } from "@/i18n/useT";
 import { distributeRows } from "@/lib/distributeRows";
+import { capabilityVisuals } from "@/lib/capabilityConfig";
 import { Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import type { CSSProperties } from "react";
 
 type Slug =
   | "product-engineering"
