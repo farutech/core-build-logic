@@ -31,6 +31,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [hovered, setHovered] = useState<Slug>("product-engineering");
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const NAV = [
