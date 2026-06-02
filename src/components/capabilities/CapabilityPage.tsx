@@ -4,16 +4,11 @@ import { useContactDrawer } from "@/stores/useContactDrawer";
 import { useT } from "@/i18n/useT";
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-
-type Slug =
-  | "product-engineering"
-  | "saas-platforms"
-  | "architecture-consulting"
-  | "ux-engineering"
-  | "automation-integrations";
+import { capabilityVisuals, type CapabilitySlug } from "@/lib/capabilityConfig";
+import type { CSSProperties } from "react";
 
 export interface CapabilityPageProps {
-  slug: Slug;
+  slug: CapabilitySlug;
   Icon: LucideIcon;
   stack: string[];
 }
@@ -22,44 +17,123 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
   const t = useT();
   const p = t.capabilityPages[slug];
   const chrome = t.capabilityPage;
+  const visual = capabilityVisuals[slug];
   const openDrawer = useContactDrawer((s) => s.openDrawer);
 
+  const accentStyle = {
+    "--cap-accent": visual.accent,
+    "--cap-glow": visual.glow,
+  } as CSSProperties;
+
+  const imageFirst = visual.layout === "right";
+
+  const metrics = visual.metrics.map((m, i) => ({
+    value: m.value,
+    label: p.metrics[i]?.label ?? "",
+  }));
+
   return (
-    <>
-      {/* Hero */}
-      <section className="relative pt-32 md:pt-44 pb-20 overflow-hidden noise">
-        <div className="absolute inset-0 bg-mesh opacity-60 pointer-events-none" />
+    <div style={accentStyle}>
+      {/* Hero — image-driven, accent per page */}
+      <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 noise">
+        {/* Accent wash unique to this capability */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-90"
+          style={{
+            background:
+              "radial-gradient(80% 60% at 70% 0%, var(--cap-glow) 0%, transparent 60%)",
+          }}
+        />
         <div className="mx-auto max-w-7xl px-6 relative">
-          <Link to="/capabilities" className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground">
+          <Link
+            to="/capabilities"
+            className="text-xs font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground"
+          >
             {chrome.back}
           </Link>
-          <div className="mt-8 grid md:grid-cols-[1.5fr_1fr] gap-12 items-center">
-            <div>
-              <div className="text-xs font-mono uppercase tracking-widest text-primary">{p.eyebrow}</div>
-              <h1 className="mt-4 font-display text-5xl md:text-7xl font-semibold leading-[0.95] tracking-tight">
-                {p.title}<br />
-                <span className="text-gradient">{p.highlight}</span>
+
+          <div
+            className={`mt-8 grid items-center gap-10 lg:gap-14 lg:grid-cols-2 ${
+              visual.layout === "centered" ? "lg:grid-cols-1" : ""
+            }`}
+          >
+            {/* Copy block */}
+            <div className={imageFirst ? "lg:order-2" : ""}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-3 py-1.5 backdrop-blur">
+                <span
+                  className="h-1.5 w-1.5 rounded-full"
+                  style={{ background: "var(--cap-accent)" }}
+                />
+                <span className="text-xs font-mono uppercase tracking-widest" style={{ color: "var(--cap-accent)" }}>
+                  {p.eyebrow}
+                </span>
+              </div>
+
+              <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tight">
+                {p.title}
+                <br />
+                <span
+                  style={{
+                    background: `linear-gradient(120deg, var(--cap-accent), color-mix(in oklab, var(--cap-accent) 55%, white))`,
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {p.highlight}
+                </span>
               </h1>
-              <p className="mt-8 text-lg text-muted-foreground max-w-xl leading-relaxed">{p.intro}</p>
-              <div className="mt-10">
+
+              <p className="mt-3 text-sm font-medium text-muted-foreground/80">{p.segment}</p>
+              <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">{p.intro}</p>
+
+              <div className="mt-9 flex flex-wrap items-center gap-3">
                 <Button
                   size="lg"
                   onClick={() => openDrawer(slug)}
-                  className="bg-foreground text-background hover:bg-foreground/90 h-12 px-6 rounded-full"
+                  className="h-12 rounded-full px-6 text-background hover:opacity-90"
+                  style={{ background: "var(--cap-accent)" }}
                 >
                   {p.cta}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
-            <div className="hidden md:flex items-center justify-center">
-              <div className="relative h-64 w-64">
-                <div className="absolute inset-0 bg-glow opacity-80" />
-                <div className="relative h-full w-full rounded-3xl border border-border bg-surface/40 backdrop-blur flex items-center justify-center">
-                  <Icon className="h-20 w-20 text-primary" strokeWidth={1.2} />
+
+            {/* Image block — the per-page identity */}
+            <div className={imageFirst ? "lg:order-1" : ""}>
+              <div
+                className="relative overflow-hidden rounded-3xl border border-border"
+                style={{ boxShadow: "0 40px 120px -30px var(--cap-glow)" }}
+              >
+                <img
+                  src={visual.image}
+                  alt={p.title + " " + p.highlight}
+                  width={1920}
+                  height={1080}
+                  className="aspect-[16/10] w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background/60 backdrop-blur">
+                  <Icon className="h-5 w-5" style={{ color: "var(--cap-accent)" }} strokeWidth={1.5} />
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Metrics band */}
+          <div className="mt-14 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border bg-border">
+            {metrics.map((m) => (
+              <div key={m.label} className="bg-surface/40 px-5 py-6 text-center sm:text-left">
+                <div
+                  className="font-display text-3xl md:text-4xl font-semibold tracking-tight"
+                  style={{ color: "var(--cap-accent)" }}
+                >
+                  {m.value}
+                </div>
+                <div className="mt-1.5 text-xs text-muted-foreground leading-snug">{m.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -74,7 +148,7 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
           <div className="mt-12 divide-y divide-border rounded-2xl border border-border bg-background/40 overflow-hidden">
             {p.problems.map((x, i) => (
               <div key={x.title} className="group flex flex-col gap-2 px-6 py-6 transition-colors hover:bg-surface/40 md:flex-row md:items-center md:gap-8">
-                <span className="font-mono text-sm text-muted-foreground/60 md:w-10">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-sm md:w-10" style={{ color: "var(--cap-accent)" }}>{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="font-display text-lg font-semibold md:w-64 md:shrink-0">{x.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed md:flex-1">{x.desc}</p>
               </div>
@@ -88,12 +162,13 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{chrome.solutionsEyebrow}</div>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
-            {chrome.solutionsTitle1} <span className="text-gradient">{chrome.solutionsTitle2}</span>
+            {chrome.solutionsTitle1}{" "}
+            <span style={{ color: "var(--cap-accent)" }}>{chrome.solutionsTitle2}</span>
           </h2>
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
             {p.solutions.map((x) => (
               <div key={x.title} className="relative bg-surface/30 p-8 transition-colors hover:bg-surface/60">
-                <div className="absolute right-6 top-6 h-1.5 w-1.5 rounded-full bg-accent" />
+                <div className="absolute right-6 top-6 h-1.5 w-1.5 rounded-full" style={{ background: "var(--cap-accent)" }} />
                 <h3 className="font-display text-lg font-semibold pr-6">{x.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{x.desc}</p>
               </div>
@@ -101,7 +176,6 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
           </div>
         </div>
       </section>
-
 
       {/* Stack */}
       <section className="py-20 border-y border-border bg-surface/20">
@@ -129,7 +203,11 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
           </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {p.useCases.map((x) => (
-              <div key={x.title} className="rounded-2xl border border-border bg-surface/40 p-8">
+              <div key={x.title} className="group relative overflow-hidden rounded-2xl border border-border bg-surface/40 p-8">
+                <div
+                  className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                  style={{ background: "var(--cap-accent)" }}
+                />
                 <h3 className="font-display text-lg font-semibold">{x.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{x.desc}</p>
               </div>
@@ -139,21 +217,26 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+      <section className="relative py-24 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{ background: "radial-gradient(60% 80% at 50% 100%, var(--cap-glow) 0%, transparent 60%)" }}
+        />
+        <div className="mx-auto max-w-3xl px-6 text-center relative">
           <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight">
             {p.cta}
           </h2>
           <Button
             size="lg"
             onClick={() => openDrawer(slug)}
-            className="mt-8 bg-foreground text-background hover:bg-foreground/90 h-12 px-6 rounded-full"
+            className="mt-8 h-12 rounded-full px-6 text-background hover:opacity-90"
+            style={{ background: "var(--cap-accent)" }}
           >
             {chrome.ctaButton}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>
-    </>
+    </div>
   );
 }
