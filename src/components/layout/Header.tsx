@@ -8,6 +8,7 @@ import { useT } from "@/i18n/useT";
 import { Menu, X, ChevronDown, Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { capabilityVisuals } from "@/lib/capabilityConfig";
 
 type Slug =
   | "product-engineering"
@@ -30,6 +31,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [hovered, setHovered] = useState<Slug>("product-engineering");
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const NAV = [
@@ -85,37 +87,74 @@ export function Header() {
             </button>
 
             {solutionsOpen && (
-              <div className="absolute left-0 top-full pt-3">
-                <div className="w-[640px] rounded-2xl border border-border bg-background/95 p-3 shadow-2xl backdrop-blur-xl">
-                  <div className="px-3 pb-2 pt-1 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
-                    {t.nav.solutionsTag}
-                  </div>
-                  <div className="grid grid-cols-2 gap-1">
-                    {solutions.map((s) => (
+              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
+                <div className="w-[760px] overflow-hidden rounded-2xl border border-border bg-background/95 shadow-2xl backdrop-blur-xl">
+                  <div className="grid grid-cols-[1.15fr_0.85fr]">
+                    {/* List */}
+                    <div className="p-3">
+                      <div className="px-3 pb-2 pt-1 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
+                        {t.nav.solutionsTag}
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        {solutions.map((s) => {
+                          const v = capabilityVisuals[s.slug];
+                          return (
+                            <Link
+                              key={s.slug}
+                              to={s.to}
+                              onMouseEnter={() => setHovered(s.slug)}
+                              onClick={() => setSolutionsOpen(false)}
+                              className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface"
+                            >
+                              <div
+                                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-background/70"
+                              >
+                                <s.Icon className="h-4 w-4" style={{ color: v.accent }} />
+                              </div>
+                              <div className="min-w-0">
+                                <div className="text-sm font-medium text-foreground">{s.title}</div>
+                                <div className="mt-0.5 line-clamp-1 text-xs text-muted-foreground leading-relaxed">{s.desc}</div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
                       <Link
-                        key={s.slug}
-                        to={s.to}
+                        to="/capabilities"
                         onClick={() => setSolutionsOpen(false)}
-                        className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface"
+                        className="mt-1 flex items-center justify-between rounded-xl border border-border bg-surface/40 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface"
                       >
-                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-accent/10 border border-border">
-                          <s.Icon className="h-4 w-4 text-primary" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-sm font-medium text-foreground">{s.title}</div>
-                          <div className="mt-0.5 line-clamp-2 text-xs text-muted-foreground leading-relaxed">{s.desc}</div>
-                        </div>
+                        {t.nav.solutionsAll}
+                        <ArrowUpRight className="h-4 w-4 text-primary" />
                       </Link>
-                    ))}
+                    </div>
+
+                    {/* Featured preview */}
+                    <Link
+                      to={solutions.find((s) => s.slug === hovered)?.to ?? "/capabilities"}
+                      onClick={() => setSolutionsOpen(false)}
+                      className="relative m-3 overflow-hidden rounded-xl border border-border"
+                    >
+                      <img
+                        src={capabilityVisuals[hovered].image}
+                        alt={t.capabilities.items[hovered].title}
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 p-4">
+                        <div
+                          className="mb-2 h-1 w-10 rounded-full"
+                          style={{ background: capabilityVisuals[hovered].accent }}
+                        />
+                        <div className="text-sm font-semibold text-foreground">
+                          {t.capabilities.items[hovered].title}
+                        </div>
+                        <div className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+                          {t.capabilities.items[hovered].desc}
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                  <Link
-                    to="/capabilities"
-                    onClick={() => setSolutionsOpen(false)}
-                    className="mt-1 flex items-center justify-between rounded-xl border border-border bg-surface/40 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface"
-                  >
-                    {t.nav.solutionsAll}
-                    <ArrowUpRight className="h-4 w-4 text-primary" />
-                  </Link>
                 </div>
               </div>
             )}

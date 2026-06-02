@@ -3,8 +3,10 @@ import { useMemo } from "react";
 import { GlowCard } from "@/components/primitives/GlowCard";
 import { useT } from "@/i18n/useT";
 import { distributeRows } from "@/lib/distributeRows";
+import { capabilityVisuals } from "@/lib/capabilityConfig";
 import { Boxes, Layers, Cpu, Sparkles, Workflow, ArrowUpRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import type { CSSProperties } from "react";
 
 type Slug =
   | "product-engineering"
@@ -64,31 +66,52 @@ export function CapabilitiesGrid({ maxPerRow = 3, dense = false }: { maxPerRow?:
             className="grid gap-4"
             style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}
           >
-            {slice.map((c) => (
+            {slice.map((c) => {
+              const v = capabilityVisuals[c.slug];
+              const accentStyle = { "--cap-accent": v.accent } as CSSProperties;
+              return (
               <GlowCard key={c.slug}>
-                <Link to={c.to} className="block h-full p-8">
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 border border-border">
-                      <c.Icon className="h-5 w-5 text-primary" />
+                <Link to={c.to} className="block h-full overflow-hidden" style={accentStyle}>
+                  {!dense && (
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={v.image}
+                        alt={c.title}
+                        loading="lazy"
+                        width={1920}
+                        height={1080}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-foreground" />
-                  </div>
-                  <h3 className={`mt-6 font-display font-semibold tracking-tight ${dense ? "text-xl" : "text-2xl"}`}>
-                    {c.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-                  {!dense && c.bullets.length > 0 && (
-                    <ul className="mt-6 flex flex-wrap gap-2">
-                      {c.bullets.map((b) => (
-                        <li key={b} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
                   )}
+                  <div className={dense ? "p-8" : "p-7 -mt-6 relative"}>
+                    <div className="flex items-start justify-between">
+                      <div
+                        className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background/70 backdrop-blur"
+                      >
+                        <c.Icon className="h-5 w-5" style={{ color: "var(--cap-accent)" }} />
+                      </div>
+                      <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-foreground" />
+                    </div>
+                    <h3 className={`mt-5 font-display font-semibold tracking-tight ${dense ? "text-xl" : "text-2xl"}`}>
+                      {c.title}
+                    </h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                    {!dense && c.bullets.length > 0 && (
+                      <ul className="mt-6 flex flex-wrap gap-2">
+                        {c.bullets.map((b) => (
+                          <li key={b} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </Link>
               </GlowCard>
-            ))}
+              );
+            })}
           </div>
         );
       })}

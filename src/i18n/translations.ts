@@ -196,6 +196,8 @@ export const en = {
     useCasesEyebrow: "In production",
     useCasesTitle: "Scenarios we've shipped.",
     ctaButton: "Start the conversation",
+    metricsEyebrow: "By the numbers",
+    metricsTitle: "Outcomes that matter.",
   },
   capabilityPages: {
     "product-engineering": {
@@ -221,6 +223,12 @@ export const en = {
         { title: "Field-ops mobile app", desc: "Offline-first React Native app for technicians with 99.9% sync reliability." },
       ],
       cta: "Let's build your platform.",
+      segment: "For teams shipping real products",
+      metrics: [
+        { label: "Idea to launch" },
+        { label: "Rewrites" },
+        { label: "Uptime" },
+      ],
     },
     "saas-platforms": {
       eyebrow: "SaaS Platforms",
@@ -245,6 +253,12 @@ export const en = {
         { title: "White-label platform", desc: "Reseller-ready multi-brand SaaS with per-tenant domains and theming." },
       ],
       cta: "Design your SaaS architecture.",
+      segment: "For SaaS founders & platform teams",
+      metrics: [
+        { label: "Tenants live" },
+        { label: "To production" },
+        { label: "Lock-in" },
+      ],
     },
     "architecture-consulting": {
       eyebrow: "Architecture & Consulting",
@@ -269,6 +283,12 @@ export const en = {
         { title: "Monolith decomposition", desc: "Mapped seams, extracted 3 critical services without downtime." },
       ],
       cta: "Diagnose your platform.",
+      segment: "For CTOs scaling under pressure",
+      metrics: [
+        { label: "Cloud bill cut" },
+        { label: "Audit window" },
+        { label: "Scale supported" },
+      ],
     },
     "ux-engineering": {
       eyebrow: "UX Engineering",
@@ -293,6 +313,12 @@ export const en = {
         { title: "Data-dense dashboards", desc: "Realtime ops dashboards rendering 50k+ rows without jank." },
       ],
       cta: "Let's build an interface worth shipping.",
+      segment: "For product teams that care about craft",
+      metrics: [
+        { label: "Product surfaces" },
+        { label: "Node types" },
+        { label: "WCAG 2.2" },
+      ],
     },
     "automation-integrations": {
       eyebrow: "Automation & Integrations",
@@ -317,6 +343,12 @@ export const en = {
         { title: "Realtime reporting", desc: "Operational metrics from 4 systems unified into one live dashboard." },
       ],
       cta: "Let's wire it together properly.",
+      segment: "For ops teams drowning in manual work",
+      metrics: [
+        { label: "Active pipelines" },
+        { label: "Silent failures" },
+        { label: "Systems unified" },
+      ],
     },
   },
   contact: {
@@ -597,6 +629,8 @@ export const es: typeof en = {
     useCasesEyebrow: "En producción",
     useCasesTitle: "Escenarios que hemos entregado.",
     ctaButton: "Empezar la conversación",
+    metricsEyebrow: "En cifras",
+    metricsTitle: "Resultados que importan.",
   },
   capabilityPages: {
     "product-engineering": {
@@ -622,6 +656,12 @@ export const es: typeof en = {
         { title: "App móvil field-ops", desc: "App React Native offline-first para técnicos con 99.9% de fiabilidad de sync." },
       ],
       cta: "Construyamos tu plataforma.",
+      segment: "Para equipos que lanzan productos reales",
+      metrics: [
+        { label: "Idea a launch" },
+        { label: "Reescrituras" },
+        { label: "Uptime" },
+      ],
     },
     "saas-platforms": {
       eyebrow: "Plataformas SaaS",
@@ -646,6 +686,12 @@ export const es: typeof en = {
         { title: "Plataforma white-label", desc: "SaaS multi-marca lista para revendedores con dominios y theming por tenant." },
       ],
       cta: "Diseña tu arquitectura SaaS.",
+      segment: "Para founders SaaS y equipos de plataforma",
+      metrics: [
+        { label: "Tenants en vivo" },
+        { label: "A producción" },
+        { label: "Lock-in" },
+      ],
     },
     "architecture-consulting": {
       eyebrow: "Arquitectura y Consultoría",
@@ -670,6 +716,12 @@ export const es: typeof en = {
         { title: "Descomposición de monolito", desc: "Mapeamos costuras, extrajimos 3 servicios críticos sin downtime." },
       ],
       cta: "Diagnostiquemos tu plataforma.",
+      segment: "Para CTOs escalando bajo presión",
+      metrics: [
+        { label: "Reducción de cuenta" },
+        { label: "Ventana de auditoría" },
+        { label: "Escala soportada" },
+      ],
     },
     "ux-engineering": {
       eyebrow: "Ingeniería UX",
@@ -694,6 +746,12 @@ export const es: typeof en = {
         { title: "Dashboards densos", desc: "Dashboards ops en tiempo real renderizando 50k+ filas sin jank." },
       ],
       cta: "Construyamos una interfaz que valga la pena entregar.",
+      segment: "Para equipos de producto que cuidan el detalle",
+      metrics: [
+        { label: "Superficies de producto" },
+        { label: "Tipos de nodo" },
+        { label: "WCAG 2.2" },
+      ],
     },
     "automation-integrations": {
       eyebrow: "Automatización e Integraciones",
@@ -718,6 +776,12 @@ export const es: typeof en = {
         { title: "Reporting en tiempo real", desc: "Métricas operativas de 4 sistemas unificadas en un dashboard en vivo." },
       ],
       cta: "Conectémoslo bien.",
+      segment: "Para equipos de ops ahogados en trabajo manual",
+      metrics: [
+        { label: "Pipelines activos" },
+        { label: "Fallos silenciosos" },
+        { label: "Sistemas unificados" },
+      ],
     },
   },
   contact: {
