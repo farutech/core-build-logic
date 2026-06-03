@@ -87,12 +87,12 @@ export function Header() {
             </button>
 
             {solutionsOpen && (
-              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
-                <div className="w-[760px] overflow-hidden rounded-2xl border border-border bg-background/95 shadow-2xl backdrop-blur-xl">
+              <div className="fixed left-1/2 top-[64px] -translate-x-1/2 pt-3">
+                <div className="w-[760px] overflow-hidden rounded-2xl border border-border/40 bg-background/60 shadow-2xl backdrop-blur-2xl">
                   <div className="grid grid-cols-[1.15fr_0.85fr]">
                     {/* List */}
                     <div className="p-3">
-                      <div className="px-3 pb-2 pt-1 text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
+                      <div className="px-3 pb-2 pt-1 text-[11px] font-mono uppercase tracking-widest text-muted-foreground/70">
                         {t.nav.solutionsTag}
                       </div>
                       <div className="flex flex-col gap-0.5">
@@ -104,10 +104,10 @@ export function Header() {
                               to={s.to}
                               onMouseEnter={() => setHovered(s.slug)}
                               onClick={() => setSolutionsOpen(false)}
-                              className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface"
+                              className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/5"
                             >
                               <div
-                                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-background/70"
+                                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5"
                               >
                                 <s.Icon className="h-4 w-4" style={{ color: v.accent }} />
                               </div>
@@ -122,7 +122,7 @@ export function Header() {
                       <Link
                         to="/capabilities"
                         onClick={() => setSolutionsOpen(false)}
-                        className="mt-1 flex items-center justify-between rounded-xl border border-border bg-surface/40 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface"
+                        className="mt-1 flex items-center justify-between rounded-xl bg-white/5 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/10"
                       >
                         {t.nav.solutionsAll}
                         <ArrowUpRight className="h-4 w-4 text-primary" />
@@ -133,7 +133,7 @@ export function Header() {
                     <Link
                       to={solutions.find((s) => s.slug === hovered)?.to ?? "/capabilities"}
                       onClick={() => setSolutionsOpen(false)}
-                      className="relative m-3 overflow-hidden rounded-xl border border-border"
+                      className="relative m-3 overflow-hidden rounded-xl"
                     >
                       <img
                         src={capabilityVisuals[hovered].image}
