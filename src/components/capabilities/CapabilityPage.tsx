@@ -13,7 +13,7 @@ export interface CapabilityPageProps {
   stack: string[];
 }
 
-export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
+export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
   const t = useT();
   const p = t.capabilityPages[slug];
   const chrome = t.capabilityPage;
@@ -106,9 +106,9 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
                 className="relative"
                 style={{
                   WebkitMaskImage:
-                    "radial-gradient(95% 90% at 50% 40%, #000 35%, transparent 80%)",
+                    "radial-gradient(80% 80% at 50% 45%, #000 30%, transparent 78%)",
                   maskImage:
-                    "radial-gradient(95% 90% at 50% 40%, #000 35%, transparent 80%)",
+                    "radial-gradient(80% 80% at 50% 45%, #000 30%, transparent 78%)",
                 }}
               >
                 <img
@@ -116,12 +116,8 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
                   alt={p.title + " " + p.highlight}
                   width={1920}
                   height={1080}
-                  className="aspect-[16/10] w-full object-cover"
+                  className="aspect-[16/10] w-full object-contain mix-blend-lighten"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <div className="absolute left-2 top-2 flex h-11 w-11 items-center justify-center rounded-xl bg-background/30 backdrop-blur">
-                  <Icon className="h-5 w-5" style={{ color: "var(--cap-accent)" }} strokeWidth={1.5} />
-                </div>
               </div>
             </div>
           </div>
