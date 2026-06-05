@@ -103,8 +103,13 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
             {/* Image block — the per-page identity */}
             <div className={imageFirst ? "lg:order-1" : ""}>
               <div
-                className="relative overflow-hidden rounded-3xl border border-border"
-                style={{ boxShadow: "0 40px 120px -30px var(--cap-glow)" }}
+                className="relative overflow-hidden rounded-3xl"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(120% 120% at 50% 35%, #000 55%, transparent 100%)",
+                  maskImage:
+                    "radial-gradient(120% 120% at 50% 35%, #000 55%, transparent 100%)",
+                }}
               >
                 <img
                   src={visual.image}
@@ -113,8 +118,8 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
                   height={1080}
                   className="aspect-[16/10] w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-                <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background/60 backdrop-blur">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl bg-background/40 backdrop-blur">
                   <Icon className="h-5 w-5" style={{ color: "var(--cap-accent)" }} strokeWidth={1.5} />
                 </div>
               </div>
