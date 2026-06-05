@@ -38,10 +38,10 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 noise">
         {/* Accent wash unique to this capability */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-90"
+          className="pointer-events-none absolute inset-0 opacity-50"
           style={{
             background:
-              "radial-gradient(80% 60% at 70% 0%, var(--cap-glow) 0%, transparent 60%)",
+              "radial-gradient(70% 55% at 75% 5%, var(--cap-glow) 0%, transparent 65%)",
           }}
         />
         <div className="mx-auto max-w-7xl px-6 relative">
