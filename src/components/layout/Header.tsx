@@ -88,7 +88,7 @@ export function Header() {
 
             {solutionsOpen && (
               <div className="fixed left-1/2 top-[64px] -translate-x-1/2 pt-3">
-                <div className="w-[760px] overflow-hidden rounded-2xl border border-border/40 bg-background/60 shadow-2xl backdrop-blur-2xl">
+                <div className="w-[760px] overflow-hidden rounded-2xl border border-border bg-background shadow-2xl">
                   <div className="grid grid-cols-[1.15fr_0.85fr]">
                     {/* List */}
                     <div className="p-3">
