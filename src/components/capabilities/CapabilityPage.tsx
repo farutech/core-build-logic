@@ -38,10 +38,10 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 noise">
         {/* Accent wash unique to this capability */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-90"
+          className="pointer-events-none absolute inset-0 opacity-50"
           style={{
             background:
-              "radial-gradient(80% 60% at 70% 0%, var(--cap-glow) 0%, transparent 60%)",
+              "radial-gradient(70% 55% at 75% 5%, var(--cap-glow) 0%, transparent 65%)",
           }}
         />
         <div className="mx-auto max-w-7xl px-6 relative">
@@ -103,12 +103,12 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
             {/* Image block — the per-page identity */}
             <div className={imageFirst ? "lg:order-1" : ""}>
               <div
-                className="relative overflow-hidden rounded-3xl"
+                className="relative"
                 style={{
                   WebkitMaskImage:
-                    "radial-gradient(120% 120% at 50% 35%, #000 55%, transparent 100%)",
+                    "radial-gradient(95% 90% at 50% 40%, #000 35%, transparent 80%)",
                   maskImage:
-                    "radial-gradient(120% 120% at 50% 35%, #000 55%, transparent 100%)",
+                    "radial-gradient(95% 90% at 50% 40%, #000 35%, transparent 80%)",
                 }}
               >
                 <img
@@ -118,8 +118,8 @@ export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
                   height={1080}
                   className="aspect-[16/10] w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
-                <div className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-xl bg-background/40 backdrop-blur">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                <div className="absolute left-2 top-2 flex h-11 w-11 items-center justify-center rounded-xl bg-background/30 backdrop-blur">
                   <Icon className="h-5 w-5" style={{ color: "var(--cap-accent)" }} strokeWidth={1.5} />
                 </div>
               </div>
