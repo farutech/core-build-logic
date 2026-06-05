@@ -138,17 +138,23 @@ export function Header() {
                       </Link>
                     </div>
 
-                    {/* Featured preview */}
+                    {/* Featured preview — all images stacked & preloaded for instant swap */}
                     <Link
                       to={solutions.find((s) => s.slug === hovered)?.to ?? "/capabilities"}
                       onClick={() => setSolutionsOpen(false)}
                       className="relative m-3 overflow-hidden rounded-xl"
                     >
-                      <img
-                        src={capabilityVisuals[hovered].image}
-                        alt={t.capabilities.items[hovered].title}
-                        className="h-full w-full object-cover"
-                      />
+                      {SOLUTION_META.map(({ slug }) => (
+                        <img
+                          key={slug}
+                          src={capabilityVisuals[slug].image}
+                          alt={t.capabilities.items[slug].title}
+                          className={cn(
+                            "h-full w-full object-cover transition-opacity duration-300",
+                            slug === hovered ? "opacity-100" : "absolute inset-0 opacity-0",
+                          )}
+                        />
+                      ))}
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 p-4">
                         <div
