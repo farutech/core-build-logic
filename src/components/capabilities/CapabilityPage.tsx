@@ -13,7 +13,7 @@ export interface CapabilityPageProps {
   stack: string[];
 }
 
-export function CapabilityPage({ slug, Icon, stack }: CapabilityPageProps) {
+export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
   const t = useT();
   const p = t.capabilityPages[slug];
   const chrome = t.capabilityPage;
