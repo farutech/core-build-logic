@@ -51,6 +51,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Preload all solution images once so the mega-menu preview swaps instantly.
+  useEffect(() => {
+    SOLUTION_META.forEach(({ slug }) => {
+      const img = new Image();
+      img.src = capabilityVisuals[slug].image;
+    });
+  }, []);
+
+
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setSolutionsOpen(true);
