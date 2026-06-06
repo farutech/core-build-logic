@@ -150,8 +150,8 @@ export function Header() {
                           src={capabilityVisuals[slug].image}
                           alt={t.capabilities.items[slug].title}
                           className={cn(
-                            "h-full w-full object-cover transition-opacity duration-300",
-                            slug === hovered ? "opacity-100" : "absolute inset-0 opacity-0",
+                            "absolute inset-0 h-full w-full object-cover transition-opacity duration-300",
+                            slug === hovered ? "opacity-100" : "opacity-0",
                           )}
                         />
                       ))}
