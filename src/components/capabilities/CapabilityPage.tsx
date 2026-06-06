@@ -106,9 +106,9 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                 className="relative"
                 style={{
                   WebkitMaskImage:
-                    "radial-gradient(80% 80% at 50% 45%, #000 30%, transparent 78%)",
+                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
                   maskImage:
-                    "radial-gradient(80% 80% at 50% 45%, #000 30%, transparent 78%)",
+                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
                 }}
               >
                 <img
@@ -116,7 +116,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                   alt={p.title + " " + p.highlight}
                   width={1920}
                   height={1080}
-                  className="aspect-[16/10] w-full object-contain mix-blend-lighten"
+                  className="aspect-[16/10] w-full object-contain mix-blend-screen"
                 />
               </div>
             </div>
