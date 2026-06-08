@@ -1,6 +1,6 @@
 // Decorative identity layers for capability pages. Each `motif` renders a
 // distinct accent-colored background pattern, and each `shape` renders a
-// unique frame decoration behind the hero image — all driven by the per-slug
+// unique frame decoration behind the hero image, all driven by the per-slug
 // config so every solution page reads as its own product.
 import type { CapabilityMotif as Motif, CapabilityShape } from "@/lib/capabilityConfig";
 

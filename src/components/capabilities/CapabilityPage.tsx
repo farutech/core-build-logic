@@ -36,7 +36,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
 
   return (
     <div style={accentStyle}>
-      {/* Hero — image-driven, accent per page */}
+      {/* Hero, image-driven, accent per page */}
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 noise">
         {/* Accent wash unique to this capability */}
         <div
@@ -117,7 +117,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
               </div>
             </div>
 
-            {/* Image block — the per-page identity */}
+            {/* Image block, the per-page identity */}
             <div className={imageFirst ? "lg:order-1" : ""}>
               <HeroFrame shape={visual.shape}>
                 <img

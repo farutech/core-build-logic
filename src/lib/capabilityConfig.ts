@@ -34,7 +34,7 @@ export interface CapabilityVisual {
   accent2: string;
   /** Soft rgba shadow color derived from the accent. */
   glow: string;
-  /** Layout flavor — varies the hero composition per page. */
+  /** Layout flavor, varies the hero composition per page. */
   layout: "left" | "right" | "centered";
   /** Distinct personality controls. */
   motif: CapabilityMotif;

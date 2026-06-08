@@ -14,9 +14,9 @@ const CASE_ACCENT = ["#3FC1FF", "#22E07C", "#B66BFF"];
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — FaruTech" },
-      { name: "description", content: "Platforms we've shipped — and what they had to survive." },
-      { property: "og:title", content: "Work — FaruTech" },
+      { title: "Work · FaruTech" },
+      { name: "description", content: "Platforms we've shipped, and what they had to survive." },
+      { property: "og:title", content: "Work · FaruTech" },
       { property: "og:description", content: "Selected case studies across fintech, logistics and health." },
     ],
   }),
@@ -42,7 +42,7 @@ function WorkPage() {
         </div>
       </section>
 
-      {/* Case Studies — Editorial zigzag */}
+      {/* Case Studies, Editorial zigzag */}
       <section className="pb-28">
         <div className="mx-auto max-w-7xl px-6 space-y-24 md:space-y-32">
           {t.work.cases.map((c, i) => {

@@ -18,9 +18,9 @@ const LAYER_COLORS = [
 export const Route = createFileRoute("/stack")({
   head: () => ({
     meta: [
-      { title: "Stack — FaruTech" },
-      { name: "description", content: "The tools we reach for first — and the criteria behind each choice." },
-      { property: "og:title", content: "Stack — FaruTech" },
+      { title: "Stack · FaruTech" },
+      { name: "description", content: "The tools we reach for first, and the criteria behind each choice." },
+      { property: "og:title", content: "Stack · FaruTech" },
       { property: "og:description", content: "Opinionated, justified, replaceable." },
     ],
   }),
@@ -45,7 +45,7 @@ function StackPage() {
         </div>
       </section>
 
-      {/* Stack Layers — Visual tower */}
+      {/* Stack Layers, Visual tower */}
       <section className="pb-16">
         <div className="mx-auto max-w-5xl px-6">
           <div className="relative space-y-3">

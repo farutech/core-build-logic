@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* FaruTech — dark-first premium engineering aesthetic */
+/* FaruTech, dark-first premium engineering aesthetic */
 
 @theme inline {
   --font-display: "Geist", "Inter", system-ui, sans-serif;

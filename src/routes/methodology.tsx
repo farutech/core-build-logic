@@ -12,9 +12,9 @@ const STEP_COLORS = ["#3FC1FF", "#FF7A1A", "#B66BFF", "#22E07C", "#36E0C0"];
 export const Route = createFileRoute("/methodology")({
   head: () => ({
     meta: [
-      { title: "Methodology — FaruTech" },
+      { title: "Methodology · FaruTech" },
       { name: "description", content: "Discovery to scale: how we move from blank repo to production." },
-      { property: "og:title", content: "Methodology — FaruTech" },
+      { property: "og:title", content: "Methodology · FaruTech" },
       { property: "og:description", content: "Five stages. No theater. Built for systems that have to survive growth." },
     ],
   }),
@@ -41,7 +41,7 @@ function MethodologyPage() {
         </div>
       </section>
 
-      {/* Process Pipeline — Visual cards */}
+      {/* Process Pipeline, Visual cards */}
       <section className="pb-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-4 md:grid-cols-5">

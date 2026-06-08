@@ -5,9 +5,9 @@ import { useT } from "@/i18n/useT";
 export const Route = createFileRoute("/security")({
   head: () => ({
     meta: [
-      { title: "Security — FaruTech" },
+      { title: "Security · FaruTech" },
       { name: "description", content: "How FaruTech builds, hosts and protects the systems we ship." },
-      { property: "og:title", content: "Security — FaruTech" },
+      { property: "og:title", content: "Security · FaruTech" },
       { property: "og:description", content: "Engineering practices, infrastructure, incident response, disclosure." },
     ],
   }),

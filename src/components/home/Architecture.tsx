@@ -144,7 +144,7 @@ function Node({ x, y, label, sub, big = false }: N) {
   );
 }
 
-/* Mobile: grouped layers connected by a single flowing line — open, not boxed-in */
+/* Mobile: grouped layers connected by a single flowing line, open, not boxed-in */
 function MobileFlow() {
   const groups: { tier: string; items: { label: string; sub: string }[] }[] = [
     { tier: "Edge", items: [{ label: "Edge", sub: "CDN · WAF" }] },
