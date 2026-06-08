@@ -119,15 +119,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
 
             {/* Image block — the per-page identity */}
             <div className={imageFirst ? "lg:order-1" : ""}>
-              <div
-                className="relative"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
-                  maskImage:
-                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
-                }}
-              >
+              <HeroFrame shape={visual.shape}>
                 <img
                   src={visual.image}
                   alt={p.title + " " + p.highlight}
@@ -135,7 +127,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                   height={1080}
                   className="aspect-[16/10] w-full object-contain mix-blend-screen"
                 />
-              </div>
+              </HeroFrame>
             </div>
           </div>
 
