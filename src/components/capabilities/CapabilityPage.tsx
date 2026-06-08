@@ -91,7 +91,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                 <br />
                 <span
                   style={{
-                    background: `linear-gradient(120deg, var(--cap-accent), color-mix(in oklab, var(--cap-accent) 55%, white))`,
+                    background: `linear-gradient(120deg, var(--cap-accent), var(--cap-accent2))`,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     WebkitTextFillColor: "transparent",
