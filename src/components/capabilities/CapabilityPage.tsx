@@ -5,6 +5,7 @@ import { useT } from "@/i18n/useT";
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { capabilityVisuals, type CapabilitySlug } from "@/lib/capabilityConfig";
+import { CapabilityMotif, HeroFrame } from "@/components/capabilities/CapabilityMotif";
 import type { CSSProperties } from "react";
 
 export interface CapabilityPageProps {
