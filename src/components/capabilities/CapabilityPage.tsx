@@ -23,6 +23,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
 
   const accentStyle = {
     "--cap-accent": visual.accent,
+    "--cap-accent2": visual.accent2,
     "--cap-glow": visual.glow,
   } as CSSProperties;
 
