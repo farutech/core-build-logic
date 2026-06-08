@@ -46,6 +46,21 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
               "radial-gradient(70% 55% at 75% 5%, var(--cap-glow) 0%, transparent 65%)",
           }}
         />
+        {/* Personality motif */}
+        <CapabilityMotif variant={visual.motif} />
+
+        {/* Vertical signature stamp */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 font-display text-[10px] font-semibold uppercase tracking-[0.5em] xl:block"
+          style={{
+            writingMode: "vertical-rl",
+            color: "color-mix(in oklab, var(--cap-accent) 50%, transparent)",
+          }}
+        >
+          {visual.signature}
+        </span>
+
         <div className="mx-auto max-w-7xl px-6 relative">
           <Link
             to="/capabilities"
