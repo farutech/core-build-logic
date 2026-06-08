@@ -5,6 +5,7 @@ import { useT } from "@/i18n/useT";
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { capabilityVisuals, type CapabilitySlug } from "@/lib/capabilityConfig";
+import { CapabilityMotif, HeroFrame } from "@/components/capabilities/CapabilityMotif";
 import type { CSSProperties } from "react";
 
 export interface CapabilityPageProps {
@@ -22,6 +23,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
 
   const accentStyle = {
     "--cap-accent": visual.accent,
+    "--cap-accent2": visual.accent2,
     "--cap-glow": visual.glow,
   } as CSSProperties;
 
@@ -44,6 +46,21 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
               "radial-gradient(70% 55% at 75% 5%, var(--cap-glow) 0%, transparent 65%)",
           }}
         />
+        {/* Personality motif */}
+        <CapabilityMotif variant={visual.motif} />
+
+        {/* Vertical signature stamp */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 font-display text-[10px] font-semibold uppercase tracking-[0.5em] xl:block"
+          style={{
+            writingMode: "vertical-rl",
+            color: "color-mix(in oklab, var(--cap-accent) 50%, transparent)",
+          }}
+        >
+          {visual.signature}
+        </span>
+
         <div className="mx-auto max-w-7xl px-6 relative">
           <Link
             to="/capabilities"
@@ -74,7 +91,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                 <br />
                 <span
                   style={{
-                    background: `linear-gradient(120deg, var(--cap-accent), color-mix(in oklab, var(--cap-accent) 55%, white))`,
+                    background: `linear-gradient(120deg, var(--cap-accent), var(--cap-accent2))`,
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     WebkitTextFillColor: "transparent",
@@ -102,15 +119,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
 
             {/* Image block — the per-page identity */}
             <div className={imageFirst ? "lg:order-1" : ""}>
-              <div
-                className="relative"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
-                  maskImage:
-                    "radial-gradient(72% 72% at 50% 45%, #000 12%, transparent 70%)",
-                }}
-              >
+              <HeroFrame shape={visual.shape}>
                 <img
                   src={visual.image}
                   alt={p.title + " " + p.highlight}
@@ -118,7 +127,7 @@ export function CapabilityPage({ slug, stack }: CapabilityPageProps) {
                   height={1080}
                   className="aspect-[16/10] w-full object-contain mix-blend-screen"
                 />
-              </div>
+              </HeroFrame>
             </div>
           </div>
 
