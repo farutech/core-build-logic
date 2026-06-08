@@ -5,9 +5,9 @@ import { useT } from "@/i18n/useT";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — FaruTech" },
+      { title: "Privacy Policy · FaruTech" },
       { name: "description", content: "How FaruTech collects, uses and protects your data." },
-      { property: "og:title", content: "Privacy Policy — FaruTech" },
+      { property: "og:title", content: "Privacy Policy · FaruTech" },
       { property: "og:description", content: "Your data, our responsibility." },
     ],
   }),

@@ -11,9 +11,9 @@ const VALUE_COLORS = ["#3FC1FF", "#22E07C", "#B66BFF", "#FF7A1A"];
 export const Route = createFileRoute("/studio")({
   head: () => ({
     meta: [
-      { title: "Studio — FaruTech" },
+      { title: "Studio · FaruTech" },
       { name: "description", content: "An engineering-first collective building modern digital platforms." },
-      { property: "og:title", content: "Studio — FaruTech" },
+      { property: "og:title", content: "Studio · FaruTech" },
       { property: "og:description", content: "Who we are, what we believe, how we work." },
     ],
   }),

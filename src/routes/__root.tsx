@@ -71,7 +71,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FaruTech — Engineering the digital frontier" },
+      { title: "FaruTech, Engineering the digital frontier" },
       {
         name: "description",
         content:

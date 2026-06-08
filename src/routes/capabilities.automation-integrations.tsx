@@ -5,9 +5,9 @@ import { CapabilityPage } from "@/components/capabilities/CapabilityPage";
 export const Route = createFileRoute("/capabilities/automation-integrations")({
   head: () => ({
     meta: [
-      { title: "Automation & Integrations — FaruTech" },
+      { title: "Automation & Integrations · FaruTech" },
       { name: "description", content: "Connect what you have with what you need. Workflows, APIs, sync." },
-      { property: "og:title", content: "Automation & Integrations — FaruTech" },
+      { property: "og:title", content: "Automation & Integrations · FaruTech" },
       { property: "og:description", content: "Less manual work. Fewer integration bugs." },
     ],
   }),

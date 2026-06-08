@@ -5,9 +5,9 @@ import { useT } from "@/i18n/useT";
 export const Route = createFileRoute("/capabilities/")({
   head: () => ({
     meta: [
-      { title: "Capabilities — FaruTech" },
+      { title: "Capabilities · FaruTech" },
       { name: "description", content: "Five engineering disciplines that ship and scale modern platforms." },
-      { property: "og:title", content: "Capabilities — FaruTech" },
+      { property: "og:title", content: "Capabilities · FaruTech" },
       { property: "og:description", content: "Product engineering, SaaS, architecture, UX and automation." },
     ],
   }),

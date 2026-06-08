@@ -10,13 +10,13 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FaruTech — Engineering the digital frontier" },
+      { title: "FaruTech, Engineering the digital frontier" },
       {
         name: "description",
         content:
           "We build scalable platforms, multi-tenant SaaS and critical systems for teams that can't afford to rewrite. No shortcuts. No tech debt.",
       },
-      { property: "og:title", content: "FaruTech — Engineering the digital frontier" },
+      { property: "og:title", content: "FaruTech, Engineering the digital frontier" },
       {
         property: "og:description",
         content:

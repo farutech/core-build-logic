@@ -138,7 +138,7 @@ export function Header() {
                       </Link>
                     </div>
 
-                    {/* Featured preview — all images stacked & preloaded for instant swap */}
+                    {/* Featured preview, all images stacked & preloaded for instant swap */}
                     <Link
                       to={solutions.find((s) => s.slug === hovered)?.to ?? "/capabilities"}
                       onClick={() => setSolutionsOpen(false)}

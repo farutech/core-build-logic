@@ -1,5 +1,5 @@
 // Central translation resources for FaruTech (en / es).
-// Mirror the structure between both languages — do not add a key in one without the other.
+// Mirror the structure between both languages, do not add a key in one without the other.
 
 export const en = {
   nav: {
@@ -18,7 +18,7 @@ export const en = {
     language: "Language",
   },
   footer: {
-    tagline: "Engineering the digital frontier. We build platforms that have to scale — for real.",
+    tagline: "Engineering the digital frontier. We build platforms that have to scale, for real.",
     capabilities: "Capabilities",
     company: "Company",
     contact: "Contact",
@@ -46,10 +46,10 @@ export const en = {
     ],
   },
   capabilities: {
-    eyebrow: "01 — Capabilities",
+    eyebrow: "01 · Capabilities",
     title1: "Five disciplines.",
     title2: "One engineering org.",
-    sub: "Not a menu of services — a coherent system for shipping platforms that survive growth.",
+    sub: "Not a menu of services, a coherent system for shipping platforms that survive growth.",
     indexTitle1: "Five disciplines.",
     indexTitle2: "One engineering org.",
     indexIntro: "Each capability stands alone. Together, they're how we build platforms that don't need to be rewritten in two years.",
@@ -82,17 +82,17 @@ export const en = {
     },
   },
   methodology: {
-    eyebrow: "02 — Methodology",
+    eyebrow: "02 · Methodology",
     title1: "How we go from blank",
     title2: "repo to",
     titleAccent: "production.",
-    sub: "A process built for systems that have to survive their first 10x — not for slide decks that have to survive procurement.",
+    sub: "A process built for systems that have to survive their first 10x, not for slide decks that have to survive procurement.",
     pageEyebrow: "Methodology",
     pageTitle1: "From discovery",
     pageTitle2: "to scale.",
-    pageIntro: "A process built for systems that have to survive their first 10x — not for slide decks that have to survive procurement.",
+    pageIntro: "A process built for systems that have to survive their first 10x, not for slide decks that have to survive procurement.",
     steps: [
-      { n: "01", title: "Discovery", desc: "We map your real constraints — technical, organizational, financial. Output: a buildable scope, not a slide deck.", out: "Scope doc · Risk map · Tech proposal" },
+      { n: "01", title: "Discovery", desc: "We map your real constraints, technical, organizational, financial. Output: a buildable scope, not a slide deck.", out: "Scope doc · Risk map · Tech proposal" },
       { n: "02", title: "Architecture", desc: "Data model, infra topology, integration surface. Decided before code, documented as ADRs.", out: "System diagram · ADRs · Stack rationale" },
       { n: "03", title: "Design", desc: "Component system, interaction patterns, motion language. Designed in code, not in Figma alone.", out: "Design system · Prototypes · UI kit" },
       { n: "04", title: "Build", desc: "2-week sprints. Trunk-based. Continuous deploy to staging from day one. You see it growing.", out: "Production releases · Test coverage · Observability" },
@@ -100,17 +100,17 @@ export const en = {
     ],
   },
   architecture: {
-    eyebrow: "03 — Architecture",
+    eyebrow: "03 · Architecture",
     title1: "We don't ship monoliths",
     title2: "by accident.",
     sub: "A representative slice of how we build modern, observable, multi-region SaaS platforms.",
   },
   work: {
-    eyebrow: "04 — Selected work",
+    eyebrow: "04 · Selected work",
     title1: "Platforms",
     title2: "in production.",
     pageEyebrow: "Work",
-    pageIntro: "A selection of the systems we've shipped — what we built, what it had to survive, what the impact looked like.",
+    pageIntro: "A selection of the systems we've shipped, what we built, what it had to survive, what the impact looked like.",
     cases: [
       { tag: "FinTech · Series B", title: "Real-time risk engine", desc: "Migrated a 200k-tx/day risk pipeline from cron-driven Python to event-sourced services. p95 latency down 87%.", metric: "87%", metricLabel: "lower p95" },
       { tag: "Logistics · Enterprise", title: "Multi-tenant ops platform", desc: "Rebuilt a legacy operations suite into a multi-region SaaS. Onboarded 40 tenants in 6 months with zero downtime.", metric: "40", metricLabel: "tenants live" },
@@ -120,7 +120,7 @@ export const en = {
   finalCTA: {
     title1: "What are you",
     title2: "building?",
-    sub: "Tell us in 2 minutes. You'll hear back from an engineer within 24h — not a sales sequence.",
+    sub: "Tell us in 2 minutes. You'll hear back from an engineer within 24h, not a sales sequence.",
     primary: "Start a project",
     or: "or email us at hello@farutech.com",
   },
@@ -128,7 +128,7 @@ export const en = {
     eyebrow: "Studio",
     title1: "An engineering-first",
     title2: "collective.",
-    intro: "We're a small group of engineers, designers and architects who got tired of consulting theater. We build serious software for teams that need it to actually work — at scale, in production, on Monday morning.",
+    intro: "We're a small group of engineers, designers and architects who got tired of consulting theater. We build serious software for teams that need it to actually work, at scale, in production, on Monday morning.",
     beliefsEyebrow: "What we believe",
     beliefsTitle1: "Four ideas that",
     beliefsTitle2: "we don't compromise on.",
@@ -140,7 +140,7 @@ export const en = {
     ],
     footprintEyebrow: "Footprint",
     footprintTitle: "Distributed by design.",
-    footprintSub: "A remote-first engineering org with people across the Americas and Europe — overlapping time zones, async by default, deeply collaborative.",
+    footprintSub: "A remote-first engineering org with people across the Americas and Europe, overlapping time zones, async by default, deeply collaborative.",
   },
   careers: {
     eyebrow: "Careers",
@@ -164,7 +164,7 @@ export const en = {
       { title: "Engineering Manager", tags: ["Remote", "Lead", "Full-time"] },
     ],
     process: [
-      { n: "01", title: "Intro call", desc: "30 min with someone from engineering — not HR. We figure out fit, fast." },
+      { n: "01", title: "Intro call", desc: "30 min with someone from engineering, not HR. We figure out fit, fast." },
       { n: "02", title: "Technical deep-dive", desc: "Conversation about your actual work. No whiteboard riddles." },
       { n: "03", title: "Pair on real code", desc: "A 2-hour paid pairing session on a real (sanitized) problem." },
       { n: "04", title: "Offer", desc: "Decision within 5 days. Transparent comp, clear leveling." },
@@ -174,7 +174,7 @@ export const en = {
     eyebrow: "Stack",
     title1: "Opinionated.",
     title2: "Justified. Replaceable.",
-    intro: "We default to a focused stack so we can move fast. We deviate when the problem calls for it — and we document why. Nothing here is sacred.",
+    intro: "We default to a focused stack so we can move fast. We deviate when the problem calls for it, and we document why. Nothing here is sacred.",
     layers: [
       { title: "Frontend", items: ["React", "TypeScript", "TanStack Start", "Next.js", "Tailwind", "Framer Motion", "Radix", "shadcn/ui"] },
       { title: "Backend", items: ["Node.js", "tRPC", "Hono", "Fastify", "Go", "Python", "Zod", "Prisma"] },
@@ -212,9 +212,9 @@ export const en = {
         { title: "Tech debt", desc: "Every release scarier than the last." },
       ],
       solutions: [
-        { title: "End-to-end product teams", desc: "Engineering, design and PM working as one — no relay races." },
+        { title: "End-to-end product teams", desc: "Engineering, design and PM working as one, no relay races." },
         { title: "Production-grade from day one", desc: "CI/CD, observability, error budgets before the first user." },
-        { title: "Operational tooling included", desc: "Admin, support, billing tools — not afterthoughts." },
+        { title: "Operational tooling included", desc: "Admin, support, billing tools, not afterthoughts." },
         { title: "Documented architecture", desc: "ADRs, runbooks and diagrams that survive the handover." },
       ],
       useCases: [
@@ -242,7 +242,7 @@ export const en = {
         { title: "Blind to usage", desc: "No clue who uses what, when, or how much it costs." },
       ],
       solutions: [
-        { title: "Tenancy that fits", desc: "Schema, row-level or pool — modeled to your isolation needs." },
+        { title: "Tenancy that fits", desc: "Schema, row-level or pool, modeled to your isolation needs." },
         { title: "Billing-ready", desc: "Plans, seats, metering and invoicing wired to the data model." },
         { title: "First-class RBAC", desc: "Roles, scopes and impersonation as platform primitives." },
         { title: "Usage analytics", desc: "Per-tenant cost and adoption visibility from launch." },
@@ -264,7 +264,7 @@ export const en = {
       eyebrow: "Architecture & Consulting",
       title: "Honest diagnostics.",
       highlight: "Actionable roadmaps.",
-      intro: "We come in, read the code, talk to the team, and tell you what's actually wrong — then we help you fix it without freezing the roadmap.",
+      intro: "We come in, read the code, talk to the team, and tell you what's actually wrong, then we help you fix it without freezing the roadmap.",
       problems: [
         { title: "Mystery latency", desc: "Pages slow, dashboards blank, no one knows why." },
         { title: "Cloud bill chaos", desc: "Costs growing faster than users." },
@@ -279,7 +279,7 @@ export const en = {
       ],
       useCases: [
         { title: "Pre-Series-B audit", desc: "Investor-grade tech diligence and 12-month modernization roadmap." },
-        { title: "Cloud bill reduction", desc: "Cut a $90k/mo AWS bill by 47% over a quarter — same workload." },
+        { title: "Cloud bill reduction", desc: "Cut a $90k/mo AWS bill by 47% over a quarter, same workload." },
         { title: "Monolith decomposition", desc: "Mapped seams, extracted 3 critical services without downtime." },
       ],
       cta: "Diagnose your platform.",
@@ -294,7 +294,7 @@ export const en = {
       eyebrow: "UX Engineering",
       title: "Interfaces",
       highlight: "that scale with you.",
-      intro: "UX as engineering, not decoration. Design systems, complex interactions, motion and accessibility — built in code so they actually ship.",
+      intro: "UX as engineering, not decoration. Design systems, complex interactions, motion and accessibility, built in code so they actually ship.",
       problems: [
         { title: "Inconsistent UI", desc: "Every feature looks like a different product." },
         { title: "Design–dev gap", desc: "Figma says one thing, prod ships another." },
@@ -303,7 +303,7 @@ export const en = {
       ],
       solutions: [
         { title: "Production design system", desc: "Tokens, components and patterns living in the same repo as the app." },
-        { title: "Complex UI specialists", desc: "Spreadsheets, builders, canvases, dashboards — our day job." },
+        { title: "Complex UI specialists", desc: "Spreadsheets, builders, canvases, dashboards, our day job." },
         { title: "Motion as language", desc: "Animation that reinforces hierarchy, not noise." },
         { title: "A11y by default", desc: "WCAG 2.2 AA from the first component." },
       ],
@@ -324,7 +324,7 @@ export const en = {
       eyebrow: "Automation & Integrations",
       title: "Connect everything.",
       highlight: "Automate the rest.",
-      intro: "We wire your systems together properly — not with brittle Zaps. APIs, event pipelines, sync engines and workflow automation built to be debugged.",
+      intro: "We wire your systems together properly, not with brittle Zaps. APIs, event pipelines, sync engines and workflow automation built to be debugged.",
       problems: [
         { title: "Manual data shuffling", desc: "Teams copying data between 5 tools every day." },
         { title: "Brittle integrations", desc: "Zapier flows that break silently." },
@@ -332,7 +332,7 @@ export const en = {
         { title: "Reporting lag", desc: "Numbers always 24h behind reality." },
       ],
       solutions: [
-        { title: "Event-driven backbones", desc: "Queues, consumers, dead-letter strategies — production-grade pipelines." },
+        { title: "Event-driven backbones", desc: "Queues, consumers, dead-letter strategies, production-grade pipelines." },
         { title: "Real integration layer", desc: "Typed clients, retries, idempotency, replays. No more silent fails." },
         { title: "Workflow engines", desc: "Visual, durable workflows for ops, onboarding, approvals." },
         { title: "Realtime sync", desc: "CDC and bi-directional sync between systems of record." },
@@ -355,7 +355,7 @@ export const en = {
     headerSubmitted: "We'll be in touch.",
     header: "Tell us what you're building.",
     descSubmitted: "Your message is in. Expect a reply within 24h from an engineer, not a sales rep.",
-    descStep: "Step {{step}} of 4 — takes under 2 minutes.",
+    descStep: "Step {{step}} of 4, takes under 2 minutes.",
     industryLabel: "Industry",
     descLabel: "What are you building?",
     descPlaceholder: "A multi-tenant SaaS for logistics teams that need real-time route optimization…",
@@ -379,7 +379,7 @@ export const en = {
       MVP: "We help you ship the first real version.",
       Scaling: "We help it survive the next 10x.",
       Rebuild: "We help you move off legacy without freezing.",
-      Migration: "Cloud, framework, or platform — we run the move.",
+      Migration: "Cloud, framework, or platform, we run the move.",
     } as Record<string, string>,
   },
   notFound: {
@@ -402,7 +402,7 @@ export const en = {
         { h: "What we collect", p: "When you contact us through this site (forms or email), we collect your name, email, company, and the details you share about your project. Server logs may record IP and user agent to prevent abuse." },
         { h: "Why we collect it", p: "To reply to your inquiry, qualify the fit between your project and our team, and improve the way we present our services. We do not sell, rent or share your data with advertisers." },
         { h: "How long we keep it", p: "Contact data is retained for as long as needed to evaluate a potential engagement, plus up to 24 months for record-keeping. You can request deletion at any time." },
-        { h: "Cookies & analytics", p: "We use minimal first-party storage to remember language preference. If we enable analytics, it will be privacy-preserving and aggregated — no cross-site tracking." },
+        { h: "Cookies & analytics", p: "We use minimal first-party storage to remember language preference. If we enable analytics, it will be privacy-preserving and aggregated, no cross-site tracking." },
         { h: "Your rights", p: "You can request access, correction or deletion of your data, or opt out of any communication. Write to privacy@farutech.com." },
         { h: "Contact", p: "Questions about this policy? privacy@farutech.com." },
       ],
@@ -421,14 +421,14 @@ export const en = {
     },
     security: {
       title: "Security",
-      intro: "How we build, host and protect the systems we ship — and this website itself.",
+      intro: "How we build, host and protect the systems we ship, and this website itself.",
       sections: [
         { h: "Engineering practices", p: "Code review on every change, automated testing, dependency scanning and signed releases. Secrets live in vaults, never in repos." },
         { h: "Infrastructure", p: "Encryption in transit (TLS 1.3) and at rest (AES-256). Least-privilege IAM, audit logs, regional isolation when client requirements demand it." },
         { h: "Application security", p: "OWASP-aware defaults, parameterized queries, CSP and security headers, rate limiting, and dependency vulnerability monitoring on every project." },
         { h: "Incident response", p: "Defined runbook with severity tiers, on-call rotation, customer notification within 72h of a confirmed incident affecting their data." },
         { h: "Responsible disclosure", p: "Found a vulnerability? Email security@farutech.com with details. We respond within 48h and credit researchers who help us improve." },
-        { h: "Compliance", p: "We design for SOC 2, ISO 27001 and GDPR readiness. We don't claim certifications we haven't earned — ask us what's in place for a given client." },
+        { h: "Compliance", p: "We design for SOC 2, ISO 27001 and GDPR readiness. We don't claim certifications we haven't earned, ask us what's in place for a given client." },
       ],
     },
   },
@@ -451,7 +451,7 @@ export const es: typeof en = {
     language: "Idioma",
   },
   footer: {
-    tagline: "Ingeniería en la frontera digital. Construimos plataformas que tienen que escalar — de verdad.",
+    tagline: "Ingeniería en la frontera digital. Construimos plataformas que tienen que escalar, de verdad.",
     capabilities: "Capacidades",
     company: "Empresa",
     contact: "Contacto",
@@ -479,10 +479,10 @@ export const es: typeof en = {
     ],
   },
   capabilities: {
-    eyebrow: "01 — Capacidades",
+    eyebrow: "01 · Capacidades",
     title1: "Cinco disciplinas.",
     title2: "Un equipo de ingeniería.",
-    sub: "No es un menú de servicios — es un sistema coherente para entregar plataformas que sobreviven al crecimiento.",
+    sub: "No es un menú de servicios, es un sistema coherente para entregar plataformas que sobreviven al crecimiento.",
     indexTitle1: "Cinco disciplinas.",
     indexTitle2: "Un equipo de ingeniería.",
     indexIntro: "Cada capacidad funciona por sí sola. Juntas, son la forma en que construimos plataformas que no hay que reescribir en dos años.",
@@ -515,17 +515,17 @@ export const es: typeof en = {
     },
   },
   methodology: {
-    eyebrow: "02 — Metodología",
+    eyebrow: "02 · Metodología",
     title1: "Cómo vamos de un repo",
     title2: "vacío a",
     titleAccent: "producción.",
-    sub: "Un proceso pensado para sistemas que tienen que sobrevivir su primer 10x — no para presentaciones que tienen que sobrevivir a procurement.",
+    sub: "Un proceso pensado para sistemas que tienen que sobrevivir su primer 10x, no para presentaciones que tienen que sobrevivir a procurement.",
     pageEyebrow: "Metodología",
     pageTitle1: "De descubrimiento",
     pageTitle2: "a escala.",
-    pageIntro: "Un proceso pensado para sistemas que tienen que sobrevivir su primer 10x — no para presentaciones que tienen que sobrevivir a procurement.",
+    pageIntro: "Un proceso pensado para sistemas que tienen que sobrevivir su primer 10x, no para presentaciones que tienen que sobrevivir a procurement.",
     steps: [
-      { n: "01", title: "Descubrimiento", desc: "Mapeamos tus restricciones reales — técnicas, organizativas, financieras. Resultado: un alcance construible, no un slide deck.", out: "Doc de alcance · Mapa de riesgos · Propuesta técnica" },
+      { n: "01", title: "Descubrimiento", desc: "Mapeamos tus restricciones reales, técnicas, organizativas, financieras. Resultado: un alcance construible, no un slide deck.", out: "Doc de alcance · Mapa de riesgos · Propuesta técnica" },
       { n: "02", title: "Arquitectura", desc: "Modelo de datos, topología de infraestructura, superficie de integración. Decidido antes del código, documentado como ADRs.", out: "Diagrama del sistema · ADRs · Justificación del stack" },
       { n: "03", title: "Diseño", desc: "Sistema de componentes, patrones de interacción, lenguaje de motion. Diseñado en código, no solo en Figma.", out: "Design system · Prototipos · UI kit" },
       { n: "04", title: "Build", desc: "Sprints de 2 semanas. Trunk-based. Deploy continuo a staging desde el día uno. Lo ves crecer.", out: "Releases en producción · Cobertura · Observabilidad" },
@@ -533,17 +533,17 @@ export const es: typeof en = {
     ],
   },
   architecture: {
-    eyebrow: "03 — Arquitectura",
+    eyebrow: "03 · Arquitectura",
     title1: "No entregamos monolitos",
     title2: "por accidente.",
     sub: "Una muestra representativa de cómo construimos plataformas SaaS modernas, observables y multi-región.",
   },
   work: {
-    eyebrow: "04 — Proyectos seleccionados",
+    eyebrow: "04 · Proyectos seleccionados",
     title1: "Plataformas",
     title2: "en producción.",
     pageEyebrow: "Proyectos",
-    pageIntro: "Una selección de los sistemas que hemos entregado — qué construimos, qué tuvo que sobrevivir, qué impacto tuvo.",
+    pageIntro: "Una selección de los sistemas que hemos entregado, qué construimos, qué tuvo que sobrevivir, qué impacto tuvo.",
     cases: [
       { tag: "FinTech · Series B", title: "Motor de riesgo en tiempo real", desc: "Migramos un pipeline de riesgo de 200k tx/día de Python por cron a servicios event-sourced. Latencia p95 -87%.", metric: "87%", metricLabel: "menos p95" },
       { tag: "Logística · Enterprise", title: "Plataforma ops multi-tenant", desc: "Reescribimos una suite de operaciones legacy como SaaS multi-región. 40 tenants en 6 meses sin caídas.", metric: "40", metricLabel: "tenants en vivo" },
@@ -553,7 +553,7 @@ export const es: typeof en = {
   finalCTA: {
     title1: "¿Qué estás",
     title2: "construyendo?",
-    sub: "Cuéntanos en 2 minutos. Tendrás respuesta de un ingeniero en menos de 24h — no de una secuencia comercial.",
+    sub: "Cuéntanos en 2 minutos. Tendrás respuesta de un ingeniero en menos de 24h, no de una secuencia comercial.",
     primary: "Iniciar proyecto",
     or: "o escríbenos a hello@farutech.com",
   },
@@ -561,7 +561,7 @@ export const es: typeof en = {
     eyebrow: "Estudio",
     title1: "Un colectivo",
     title2: "de ingeniería primero.",
-    intro: "Somos un grupo pequeño de ingenieros, diseñadores y arquitectos cansados del teatro de consultoría. Construimos software serio para equipos que necesitan que funcione de verdad — a escala, en producción, el lunes por la mañana.",
+    intro: "Somos un grupo pequeño de ingenieros, diseñadores y arquitectos cansados del teatro de consultoría. Construimos software serio para equipos que necesitan que funcione de verdad, a escala, en producción, el lunes por la mañana.",
     beliefsEyebrow: "En qué creemos",
     beliefsTitle1: "Cuatro ideas",
     beliefsTitle2: "innegociables.",
@@ -573,7 +573,7 @@ export const es: typeof en = {
     ],
     footprintEyebrow: "Presencia",
     footprintTitle: "Distribuidos por diseño.",
-    footprintSub: "Una organización de ingeniería remote-first con gente en América y Europa — zonas horarias que se solapan, asíncrono por defecto, profundamente colaborativo.",
+    footprintSub: "Una organización de ingeniería remote-first con gente en América y Europa, zonas horarias que se solapan, asíncrono por defecto, profundamente colaborativo.",
   },
   careers: {
     eyebrow: "Trabaja con nosotros",
@@ -597,7 +597,7 @@ export const es: typeof en = {
       { title: "Engineering Manager", tags: ["Remoto", "Lead", "Full-time"] },
     ],
     process: [
-      { n: "01", title: "Llamada intro", desc: "30 min con alguien de ingeniería — no de RR.HH. Vemos fit, rápido." },
+      { n: "01", title: "Llamada intro", desc: "30 min con alguien de ingeniería, no de RR.HH. Vemos fit, rápido." },
       { n: "02", title: "Deep-dive técnico", desc: "Conversación sobre tu trabajo real. Sin acertijos de pizarra." },
       { n: "03", title: "Pair sobre código real", desc: "Sesión pagada de 2h sobre un problema real (sanitizado)." },
       { n: "04", title: "Oferta", desc: "Decisión en 5 días. Compensación transparente, nivelación clara." },
@@ -607,7 +607,7 @@ export const es: typeof en = {
     eyebrow: "Stack",
     title1: "Con criterio.",
     title2: "Justificado. Reemplazable.",
-    intro: "Vamos por defecto a un stack enfocado para movernos rápido. Nos desviamos cuando el problema lo exige — y documentamos por qué. Nada acá es sagrado.",
+    intro: "Vamos por defecto a un stack enfocado para movernos rápido. Nos desviamos cuando el problema lo exige, y documentamos por qué. Nada acá es sagrado.",
     layers: [
       { title: "Frontend", items: ["React", "TypeScript", "TanStack Start", "Next.js", "Tailwind", "Framer Motion", "Radix", "shadcn/ui"] },
       { title: "Backend", items: ["Node.js", "tRPC", "Hono", "Fastify", "Go", "Python", "Zod", "Prisma"] },
@@ -645,9 +645,9 @@ export const es: typeof en = {
         { title: "Deuda técnica", desc: "Cada release da más miedo que el anterior." },
       ],
       solutions: [
-        { title: "Equipos de producto end-to-end", desc: "Ingeniería, diseño y PM como uno solo — sin carreras de postas." },
+        { title: "Equipos de producto end-to-end", desc: "Ingeniería, diseño y PM como uno solo, sin carreras de postas." },
         { title: "Production-grade desde el día uno", desc: "CI/CD, observabilidad y error budgets antes del primer usuario." },
-        { title: "Tooling operativo incluido", desc: "Admin, soporte, billing — no como afterthoughts." },
+        { title: "Tooling operativo incluido", desc: "Admin, soporte, billing, no como afterthoughts." },
         { title: "Arquitectura documentada", desc: "ADRs, runbooks y diagramas que sobreviven al handover." },
       ],
       useCases: [
@@ -675,7 +675,7 @@ export const es: typeof en = {
         { title: "Ciegos al uso", desc: "Sin idea de quién usa qué, cuándo o cuánto cuesta." },
       ],
       solutions: [
-        { title: "Tenancy a medida", desc: "Schema, row-level o pool — modelado a tus necesidades de aislamiento." },
+        { title: "Tenancy a medida", desc: "Schema, row-level o pool, modelado a tus necesidades de aislamiento." },
         { title: "Billing-ready", desc: "Planes, asientos, medición y facturación conectados al modelo de datos." },
         { title: "RBAC de primera clase", desc: "Roles, scopes e impersonación como primitivas de la plataforma." },
         { title: "Analítica de uso", desc: "Visibilidad de costo y adopción por tenant desde el lanzamiento." },
@@ -697,7 +697,7 @@ export const es: typeof en = {
       eyebrow: "Arquitectura y Consultoría",
       title: "Diagnóstico honesto.",
       highlight: "Hojas de ruta accionables.",
-      intro: "Entramos, leemos el código, hablamos con el equipo y te decimos qué está realmente mal — después te ayudamos a arreglarlo sin congelar el roadmap.",
+      intro: "Entramos, leemos el código, hablamos con el equipo y te decimos qué está realmente mal, después te ayudamos a arreglarlo sin congelar el roadmap.",
       problems: [
         { title: "Latencia misteriosa", desc: "Páginas lentas, dashboards en blanco, nadie sabe por qué." },
         { title: "Caos de cuenta cloud", desc: "Costos creciendo más rápido que los usuarios." },
@@ -712,7 +712,7 @@ export const es: typeof en = {
       ],
       useCases: [
         { title: "Auditoría pre-Series-B", desc: "Diligencia técnica grado inversor y roadmap de modernización a 12 meses." },
-        { title: "Reducción de cuenta cloud", desc: "Recortamos una cuenta AWS de $90k/mes en un 47% en un trimestre — misma carga." },
+        { title: "Reducción de cuenta cloud", desc: "Recortamos una cuenta AWS de $90k/mes en un 47% en un trimestre, misma carga." },
         { title: "Descomposición de monolito", desc: "Mapeamos costuras, extrajimos 3 servicios críticos sin downtime." },
       ],
       cta: "Diagnostiquemos tu plataforma.",
@@ -727,7 +727,7 @@ export const es: typeof en = {
       eyebrow: "Ingeniería UX",
       title: "Interfaces",
       highlight: "que escalan contigo.",
-      intro: "UX como ingeniería, no como decoración. Design systems, interacciones complejas, motion y accesibilidad — construidos en código para que realmente lleguen a producción.",
+      intro: "UX como ingeniería, no como decoración. Design systems, interacciones complejas, motion y accesibilidad, construidos en código para que realmente lleguen a producción.",
       problems: [
         { title: "UI inconsistente", desc: "Cada feature parece de un producto diferente." },
         { title: "Brecha diseño–dev", desc: "Figma dice una cosa, producción entrega otra." },
@@ -736,7 +736,7 @@ export const es: typeof en = {
       ],
       solutions: [
         { title: "Design system de producción", desc: "Tokens, componentes y patrones viviendo en el mismo repo que la app." },
-        { title: "Especialistas en UI compleja", desc: "Hojas de cálculo, builders, canvases, dashboards — nuestro día a día." },
+        { title: "Especialistas en UI compleja", desc: "Hojas de cálculo, builders, canvases, dashboards, nuestro día a día." },
         { title: "Motion como lenguaje", desc: "Animación que refuerza jerarquía, no ruido." },
         { title: "Accesibilidad por defecto", desc: "WCAG 2.2 AA desde el primer componente." },
       ],
@@ -757,7 +757,7 @@ export const es: typeof en = {
       eyebrow: "Automatización e Integraciones",
       title: "Conecta todo.",
       highlight: "Automatiza el resto.",
-      intro: "Conectamos tus sistemas bien — no con Zaps frágiles. APIs, pipelines de eventos, motores de sincronización y automatización de workflow construidos para ser debugueados.",
+      intro: "Conectamos tus sistemas bien, no con Zaps frágiles. APIs, pipelines de eventos, motores de sincronización y automatización de workflow construidos para ser debugueados.",
       problems: [
         { title: "Mover datos a mano", desc: "Equipos copiando datos entre 5 herramientas todos los días." },
         { title: "Integraciones frágiles", desc: "Flujos de Zapier que se rompen en silencio." },
@@ -765,7 +765,7 @@ export const es: typeof en = {
         { title: "Reporting con lag", desc: "Los números siempre 24h atrás de la realidad." },
       ],
       solutions: [
-        { title: "Backbones event-driven", desc: "Colas, consumers, estrategias de dead-letter — pipelines production-grade." },
+        { title: "Backbones event-driven", desc: "Colas, consumers, estrategias de dead-letter, pipelines production-grade." },
         { title: "Capa de integración real", desc: "Clientes tipados, reintentos, idempotencia, replays. Se acabaron los fallos silenciosos." },
         { title: "Motores de workflow", desc: "Workflows visuales y durables para ops, onboarding, aprobaciones." },
         { title: "Sync en tiempo real", desc: "CDC y sincronización bi-direccional entre sistemas de registro." },
@@ -788,7 +788,7 @@ export const es: typeof en = {
     headerSubmitted: "Hablamos pronto.",
     header: "Cuéntanos qué estás construyendo.",
     descSubmitted: "Mensaje recibido. Espera respuesta en 24h de un ingeniero, no de un comercial.",
-    descStep: "Paso {{step}} de 4 — toma menos de 2 minutos.",
+    descStep: "Paso {{step}} de 4, toma menos de 2 minutos.",
     industryLabel: "Industria",
     descLabel: "¿Qué estás construyendo?",
     descPlaceholder: "Un SaaS multi-tenant para equipos de logística que necesitan optimización de rutas en tiempo real…",
@@ -812,7 +812,7 @@ export const es: typeof en = {
       MVP: "Ayudamos a entregar la primera versión real.",
       Escalando: "Ayudamos a que sobreviva el próximo 10x.",
       Reescritura: "Ayudamos a salir del legacy sin congelar.",
-      Migración: "Cloud, framework o plataforma — manejamos la mudanza.",
+      Migración: "Cloud, framework o plataforma, manejamos la mudanza.",
     } as Record<string, string>,
   },
   notFound: {
@@ -835,7 +835,7 @@ export const es: typeof en = {
         { h: "Qué recogemos", p: "Cuando nos contactas a través del sitio (formularios o email), recogemos tu nombre, correo, empresa y los detalles que compartes sobre tu proyecto. Los logs del servidor pueden registrar IP y user agent para prevenir abusos." },
         { h: "Por qué lo recogemos", p: "Para responder a tu consulta, evaluar el encaje entre tu proyecto y nuestro equipo, y mejorar cómo presentamos nuestros servicios. No vendemos, alquilamos ni compartimos tus datos con anunciantes." },
         { h: "Cuánto tiempo lo guardamos", p: "Los datos de contacto se mantienen el tiempo necesario para evaluar una posible colaboración, más hasta 24 meses para registro. Puedes pedir su eliminación en cualquier momento." },
-        { h: "Cookies y analítica", p: "Usamos almacenamiento mínimo first-party para recordar tu preferencia de idioma. Si activamos analítica, será respetuosa con la privacidad y agregada — sin tracking cross-site." },
+        { h: "Cookies y analítica", p: "Usamos almacenamiento mínimo first-party para recordar tu preferencia de idioma. Si activamos analítica, será respetuosa con la privacidad y agregada, sin tracking cross-site." },
         { h: "Tus derechos", p: "Puedes pedir acceso, corrección o eliminación de tus datos, o darte de baja de cualquier comunicación. Escríbenos a privacy@farutech.com." },
         { h: "Contacto", p: "¿Preguntas sobre esta política? privacy@farutech.com." },
       ],
@@ -854,14 +854,14 @@ export const es: typeof en = {
     },
     security: {
       title: "Seguridad",
-      intro: "Cómo construimos, hospedamos y protegemos los sistemas que entregamos — y este mismo sitio.",
+      intro: "Cómo construimos, hospedamos y protegemos los sistemas que entregamos, y este mismo sitio.",
       sections: [
         { h: "Prácticas de ingeniería", p: "Code review en cada cambio, testing automatizado, escaneo de dependencias y releases firmados. Los secretos viven en vaults, nunca en los repos." },
         { h: "Infraestructura", p: "Cifrado en tránsito (TLS 1.3) y en reposo (AES-256). IAM con menor privilegio, audit logs, aislamiento regional cuando el cliente lo exige." },
         { h: "Seguridad de aplicación", p: "Defaults conscientes de OWASP, queries parametrizadas, CSP y headers de seguridad, rate limiting y monitoreo de vulnerabilidades de dependencias en cada proyecto." },
         { h: "Respuesta a incidentes", p: "Runbook definido con niveles de severidad, rotación on-call, notificación al cliente en 72h ante un incidente confirmado que afecte sus datos." },
         { h: "Divulgación responsable", p: "¿Encontraste una vulnerabilidad? Escribe a security@farutech.com con detalles. Respondemos en 48h y damos crédito a quienes nos ayudan a mejorar." },
-        { h: "Cumplimiento", p: "Diseñamos para estar listos para SOC 2, ISO 27001 y GDPR. No reclamamos certificaciones que no tenemos — pregúntanos qué hay implementado para un cliente concreto." },
+        { h: "Cumplimiento", p: "Diseñamos para estar listos para SOC 2, ISO 27001 y GDPR. No reclamamos certificaciones que no tenemos, pregúntanos qué hay implementado para un cliente concreto." },
       ],
     },
   },

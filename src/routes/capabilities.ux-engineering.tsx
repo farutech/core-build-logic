@@ -5,9 +5,9 @@ import { CapabilityPage } from "@/components/capabilities/CapabilityPage";
 export const Route = createFileRoute("/capabilities/ux-engineering")({
   head: () => ({
     meta: [
-      { title: "UX Engineering — FaruTech" },
+      { title: "UX Engineering · FaruTech" },
       { name: "description", content: "Interfaces and design systems that scale with your product." },
-      { property: "og:title", content: "UX Engineering — FaruTech" },
+      { property: "og:title", content: "UX Engineering · FaruTech" },
       { property: "og:description", content: "Where design meets the codebase." },
     ],
   }),

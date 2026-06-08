@@ -13,16 +13,16 @@ const PERKS = [
   "Global coworking access",
   "Learning & conference budget",
   "Latest hardware from day one",
-  "Flexible PTO — no count",
+  "Flexible PTO, no count",
   "Equity for senior roles",
 ];
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — FaruTech" },
+      { title: "Careers · FaruTech" },
       { name: "description", content: "Build the tools of tomorrow, today. Open engineering, design and platform roles." },
-      { property: "og:title", content: "Careers — FaruTech" },
+      { property: "og:title", content: "Careers · FaruTech" },
       { property: "og:description", content: "An engineering-first collective hiring senior builders." },
     ],
   }),
@@ -106,7 +106,7 @@ function CareersPage() {
         </div>
       </section>
 
-      {/* Hiring Process — Horizontal timeline */}
+      {/* Hiring Process, Horizontal timeline */}
       <section className="py-20 border-y border-border bg-surface/20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{t.careers.processEyebrow}</div>
