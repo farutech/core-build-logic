@@ -13,6 +13,7 @@ import { Route as WorkRouteImport } from './routes/work'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StudioRouteImport } from './routes/studio'
 import { Route as StackRouteImport } from './routes/stack'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MethodologyRouteImport } from './routes/methodology'
@@ -43,6 +44,11 @@ const StudioRoute = StudioRouteImport.update({
 const StackRoute = StackRouteImport.update({
   id: '/stack',
   path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecurityRoute = SecurityRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/methodology': typeof MethodologyRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stack': typeof StackRoute
   '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/methodology'
     | '/privacy'
     | '/security'
+    | '/sitemap.xml'
     | '/stack'
     | '/studio'
     | '/terms'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/methodology'
     | '/privacy'
     | '/security'
+    | '/sitemap.xml'
     | '/stack'
     | '/studio'
     | '/terms'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/methodology'
     | '/privacy'
     | '/security'
+    | '/sitemap.xml'
     | '/stack'
     | '/studio'
     | '/terms'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   MethodologyRoute: typeof MethodologyRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StackRoute: typeof StackRoute
   StudioRoute: typeof StudioRoute
   TermsRoute: typeof TermsRoute
@@ -258,6 +271,13 @@ declare module '@tanstack/react-router' {
       path: '/stack'
       fullPath: '/stack'
       preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/security': {
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   MethodologyRoute: MethodologyRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StackRoute: StackRoute,
   StudioRoute: StudioRoute,
   TermsRoute: TermsRoute,
