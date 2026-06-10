@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Layers, Server, Database, Cloud, Eye, BrainCircuit } from "lucide-react";
 import { useContactDrawer } from "@/stores/useContactDrawer";
 import { Button } from "@/components/ui/button";
+import { buildSeo, breadcrumbJsonLd } from "@/lib/seo";
 
 const LAYER_ICONS = [Layers, Server, Database, Cloud, Eye, BrainCircuit];
 const LAYER_COLORS = [
@@ -16,14 +17,17 @@ const LAYER_COLORS = [
 ];
 
 export const Route = createFileRoute("/stack")({
-  head: () => ({
-    meta: [
-      { title: "Stack · FaruTech" },
-      { name: "description", content: "The tools we reach for first, and the criteria behind each choice." },
-      { property: "og:title", content: "Stack · FaruTech" },
-      { property: "og:description", content: "Opinionated, justified, replaceable." },
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/stack",
+      title: "Stack · FaruTech",
+      description:
+        "The tools we reach for first and the criteria behind each choice. Opinionated, justified, replaceable.",
+      jsonLd: breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Stack", path: "/stack" },
+      ]),
+    }),
   component: StackPage,
 });
 

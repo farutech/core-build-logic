@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, Rocket, Users, BookOpen } from "lucide-react";
 import { useContactDrawer } from "@/stores/useContactDrawer";
 import { Button } from "@/components/ui/button";
+import { buildSeo, breadcrumbJsonLd } from "@/lib/seo";
 
 const VALUE_ICONS = [Code2, Rocket, Users, BookOpen];
 const VALUE_COLORS = ["#3FC1FF", "#22E07C", "#B66BFF", "#FF7A1A"];

@@ -5,19 +5,23 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Search, Layout, Palette, Hammer, TrendingUp } from "lucide-react";
 import { useContactDrawer } from "@/stores/useContactDrawer";
 import { Button } from "@/components/ui/button";
+import { buildSeo, breadcrumbJsonLd } from "@/lib/seo";
 
 const STEP_ICONS = [Search, Layout, Palette, Hammer, TrendingUp];
 const STEP_COLORS = ["#3FC1FF", "#FF7A1A", "#B66BFF", "#22E07C", "#36E0C0"];
 
 export const Route = createFileRoute("/methodology")({
-  head: () => ({
-    meta: [
-      { title: "Methodology · FaruTech" },
-      { name: "description", content: "Discovery to scale: how we move from blank repo to production." },
-      { property: "og:title", content: "Methodology · FaruTech" },
-      { property: "og:description", content: "Five stages. No theater. Built for systems that have to survive growth." },
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/methodology",
+      title: "Methodology · FaruTech",
+      description:
+        "Discovery to scale: how we move from a blank repo to production. Five stages, no theater, built for systems that have to survive growth.",
+      jsonLd: breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Methodology", path: "/methodology" },
+      ]),
+    }),
   component: MethodologyPage,
 });
 

@@ -7,19 +7,23 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import fintechImg from "@/assets/work-fintech.jpg";
 import logisticsImg from "@/assets/work-logistics.jpg";
 import healthImg from "@/assets/work-health.jpg";
+import { buildSeo, breadcrumbJsonLd } from "@/lib/seo";
 
 const CASE_IMAGES = [fintechImg, logisticsImg, healthImg];
 const CASE_ACCENT = ["#3FC1FF", "#22E07C", "#B66BFF"];
 
 export const Route = createFileRoute("/work")({
-  head: () => ({
-    meta: [
-      { title: "Work · FaruTech" },
-      { name: "description", content: "Platforms we've shipped, and what they had to survive." },
-      { property: "og:title", content: "Work · FaruTech" },
-      { property: "og:description", content: "Selected case studies across fintech, logistics and health." },
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/work",
+      title: "Work · FaruTech",
+      description:
+        "Platforms we've shipped and what they had to survive. Selected case studies across fintech, logistics and health.",
+      jsonLd: breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Work", path: "/work" },
+      ]),
+    }),
   component: WorkPage,
 });
 

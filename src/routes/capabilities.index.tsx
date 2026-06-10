@@ -1,16 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CapabilitiesGrid } from "@/components/capabilities/CapabilitiesGrid";
 import { useT } from "@/i18n/useT";
+import { buildSeo, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/capabilities/")({
-  head: () => ({
-    meta: [
-      { title: "Capabilities · FaruTech" },
-      { name: "description", content: "Five engineering disciplines that ship and scale modern platforms." },
-      { property: "og:title", content: "Capabilities · FaruTech" },
-      { property: "og:description", content: "Product engineering, SaaS, architecture, UX and automation." },
-    ],
-  }),
+  head: () =>
+    buildSeo({
+      path: "/capabilities",
+      title: "Capabilities · FaruTech",
+      description:
+        "Five engineering disciplines that ship and scale modern platforms: product engineering, SaaS, architecture, UX and automation.",
+      jsonLd: breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "Capabilities", path: "/capabilities" },
+      ]),
+    }),
   component: CapabilitiesIndex,
 });
 
